@@ -3,15 +3,12 @@ import { Twitter, Linkedin, Github } from "lucide-react";
 import { SITE } from "@/lib/constants";
 
 const DIVISION_LINKS = [
-  { label: "AI Advisory", href: "/ecosystem/advisory" },
   { label: "Education", href: "/ecosystem/education" },
   { label: "Talent", href: "/ecosystem/talent" },
   { label: "Mobility", href: "/ecosystem/mobility" },
-  { label: "Technology", href: "/ecosystem/technology" },
 ];
 
 const COMPANY_LINKS = [
-  { label: "Platform", href: "/ecosystem/technology" },
   { label: "Africa", href: "/africa" },
   { label: "Partners", href: "/partners" },
   { label: "Contact", href: "/contact" },
@@ -70,7 +67,7 @@ export function Footer() {
             </Link>
             <p className="text-slate max-w-sm mb-8 leading-relaxed text-sm">
               An intelligence infrastructure firm connecting emerging markets
-              through AI, education, talent, mobility, and technology.
+              through education, talent, and mobility.
               Headquartered in Dubai, UAE.
             </p>
             <div className="flex items-center gap-3">

@@ -199,3 +199,15 @@
 .animate-spin-slow {
   animation: spin-slow 8s linear infinite;
 }
+
+/* Cascading arrow pulse — comparison section */
+@keyframes arrowPulse1 { 0%, 100% { opacity: 0.15; transform: translateX(0); } 50% { opacity: 0.5; transform: translateX(2px); } }
+@keyframes arrowPulse2 { 0%, 100% { opacity: 0.35; transform: translateX(0); } 50% { opacity: 0.65; transform: translateX(2px); } }
+@keyframes arrowPulse3 { 0%, 100% { opacity: 0.60; transform: translateX(0); } 50% { opacity: 0.85; transform: translateX(2px); } }
+@keyframes arrowPulse4 { 0%, 100% { opacity: 0.85; transform: translateX(0); } 50% { opacity: 1; transform: translateX(2px); } }
+
+/* Division tab auto-rotate progress bar */
+@keyframes divisionProgress {
+  from { width: 0%; }
+  to { width: 100%; }
+}

@@ -3,44 +3,77 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Globe, BrainCircuit, Users, Shield, Database, BarChart3, Plug } from "lucide-react";
+import {
+  ArrowUpRight,
+  Globe,
+  BrainCircuit,
+  Users,
+  Shield,
+  Database,
+  BarChart3,
+  Plug,
+  GraduationCap,
+  Plane,
+  X,
+  Check,
+  ChevronRight,
+} from "lucide-react";
 import { WhyChooseSection } from "@/components/WhyChooseSection";
 import { StatusBadge } from "@/components/StatusBadge";
 import { EngagementTimeline } from "@/components/EngagementTimeline";
-import { ComparisonSection } from "@/components/ComparisonSection";
 import { DivisionsShowcase } from "@/components/DivisionsShowcase";
 
 const STATS = [
-  { value: "14", label: "Countries Operational" },
-  { value: "850+", label: "Professionals Placed" },
-  { value: "28", label: "Institutional Partners" },
-  { value: "$1.8B", label: "Advisory Influence" },
+  { value: "18", label: "Govt engagements" },
+  { value: "$2B+", label: "Workforce investment" },
+  { value: "1,000+", label: "Partner institutions" },
+  { value: "35+", label: "Enterprise clients" },
 ];
 
 const CORRIDORS = [
   {
-    name: "East Africa Hub",
+    name: "Africa",
     status: "Active" as const,
-    note: "Kenya · Tanzania · Uganda · Ethiopia",
+    note: "54 markets · 1.4B+ population by 2030",
   },
   {
-    name: "India–GCC Corridor",
+    name: "India",
     status: "Active" as const,
-    note: "India · UAE · Saudi Arabia · Qatar",
+    note: "400,000+ profiles · 20+ years placement data",
   },
   {
-    name: "North Africa Expansion",
-    status: "Launching" as const,
-    note: "Egypt · Morocco · Tunisia",
+    name: "GCC / Middle East",
+    status: "Active" as const,
+    note: "Workforce transformation · Rapid growth corridor",
   },
 ];
 
-const PARTNERS = [
-  "Meridian Capital Group",
-  "SafiFoundation",
-  "PanVentures Ltd",
-  "Gulf Nexus Capital",
-  "InteliConnect",
+const PARTNERS: { name: string; logo: string; bg: string; imgClass?: string }[] = [
+  {
+    name: "Aurix Works",
+    logo: "https://res.cloudinary.com/dtg3lepr4/image/upload/v1783362073/aurix_works_logo_hires_transparent_foftmn.png",
+    bg: "#15131f",
+  },
+  {
+    name: "Emilestones",
+    logo: "https://res.cloudinary.com/dtg3lepr4/image/upload/v1783361344/emilestones_logo_p29vbm.png",
+    bg: "#ffffff",
+  },
+  {
+    name: "Regenesys SAI",
+    logo: "https://res.cloudinary.com/dtg3lepr4/image/upload/v1783362138/regenesys-sai_logo_fifyk7.png",
+    bg: "#15131f",
+  },
+  {
+    name: "Aurix Works",
+    logo: "https://res.cloudinary.com/dtg3lepr4/image/upload/v1783362009/aurix_works_logo_hires_msmdvy.png",
+    bg: "#ffffff",
+  },
+  {
+    name: "Success Tours",
+    logo: "https://res.cloudinary.com/dtg3lepr4/image/upload/v1783362106/success-tours_logo_orjpob.png",
+    bg: "#ffffff",
+  },
 ];
 
 
@@ -82,21 +115,15 @@ export default function HomePage() {
               </h1>
 
               <p className="mt-5 text-white/75 text-lg leading-relaxed max-w-lg mb-10">
-                Luminyx Group unifies AI advisory, education, talent, mobility,
-                and technology into a single intelligence infrastructure —
-                purpose-built for Africa, India, and the GCC corridor.
+                Luminyx Group unifies education, talent, and mobility into a
+                single intelligence infrastructure — purpose-built for
+                Africa, India, and the GCC corridor.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-14">
-                <Link href="/ecosystem/advisory" className="btn-primary group">
+                <Link href="/ecosystem" className="btn-primary group">
                   Explore the Ecosystem
                   <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                </Link>
-                <Link
-                  href="/ecosystem/technology"
-                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-white/30 text-white hover:bg-white/10 transition-colors"
-                >
-                  View Platform
                 </Link>
               </div>
 
@@ -161,9 +188,9 @@ export default function HomePage() {
                 </div>
 
                 <div className="mt-6 pt-5 border-t border-light-gray">
-                  <div className="text-xs text-ink-faint mb-3 uppercase tracking-widest">Active divisions</div>
+                  <div className="text-xs text-ink-faint mb-3 uppercase tracking-widest">Live intelligence</div>
                   <div className="flex flex-wrap gap-2">
-                    {["Advisory", "Education", "Talent", "Mobility", "Technology"].map((d) => (
+                    {["Education", "Talent", "Mobility"].map((d) => (
                       <span
                         key={d}
                         className="px-3 py-1 rounded-full text-xs font-medium bg-primary-brand/10 text-accent-purple border border-primary-brand/20"
@@ -179,27 +206,218 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── TRUSTED PARTNERS ────────────────────────────────────────────────── */}
-      <section className="py-10 border-y border-light-gray bg-bg-subtle">
+      {/* ─── TRUSTED PARTNERS & ECOSYSTEM ───────────────────────────────────── */}
+      <section
+        className="py-14"
+        style={{ background: "linear-gradient(180deg, #0B0A18, #120E24)" }}
+      >
         <div className="container-xl">
-          <p className="text-center text-[10px] uppercase tracking-[0.2em] text-ink-faint font-medium mb-6">
-            Trusted by leading institutions across 14 countries
+          <p className="text-center text-xs font-bold uppercase tracking-widest mb-8" style={{ color: "#A5B4FC" }}>
+            Trusted Partners &amp; Ecosystem
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
-            {PARTNERS.map((p) => (
-              <span
-                key={p}
-                className="px-5 py-2 rounded-full bg-white border border-light-gray text-sm text-slate font-medium shadow-sm"
+            {PARTNERS.map((p, i) => (
+              <div
+                key={`${p.name}-${i}`}
+                style={{
+                  background: p.bg,
+                  border: p.bg === "#ffffff" ? "1px solid rgba(255,255,255,0.08)" : "1px solid rgba(255,255,255,0.1)",
+                  minWidth: "160px",
+                  height: "80px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  padding: "16px 24px",
+                  borderRadius: "16px",
+                  boxShadow: p.bg === "#ffffff" ? "0 8px 24px -8px rgba(0,0,0,0.35)" : "none",
+                }}
               >
-                {p}
-              </span>
+                <Image
+                  src={p.logo}
+                  alt={p.name}
+                  width={140}
+                  height={56}
+                  className={`h-12 w-auto object-contain ${p.imgClass ?? ""}`}
+                  style={{ maxWidth: "130px", display: "block" }}
+                />
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* ─── THE PROBLEM ─────────────────────────────────────────────────────── */}
-      <ComparisonSection />
+      <section className="py-16 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-primary-light/20 to-white pointer-events-none" style={{ zIndex: 0 }} />
+        <div className="container-xl" style={{ position: 'relative', zIndex: 1 }}>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+
+            {/* LEFT SIDE */}
+            <div className="lg:col-span-4">
+              <div className="chip mb-4">The Challenge</div>
+              <h2 className="font-display text-3xl md:text-4xl font-bold leading-tight" style={{ color: "#111827" }}>
+                Fragmented Platforms <br />Create{" "}
+                <span style={{ color: "#6D28D9" }}>Execution Gaps</span>
+              </h2>
+              <p className="mt-4 leading-relaxed" style={{ color: "#4B5563" }}>
+                Across Talent, Education, and Mobility, organizations face fragmented
+                systems and disconnected partners. This leads to inefficiencies,
+                inconsistent experiences, and missed opportunities across borders.
+              </p>
+              <blockquote className="mt-6 pl-4 border-l-2 border-primary-brand/30">
+                <p className="text-sm italic" style={{ color: "#6B7280" }}>
+                  "The biggest risk in transformation isn't strategy — it's fragmented
+                  execution across platforms."
+                </p>
+              </blockquote>
+            </div>
+
+            {/* RIGHT SIDE — grouped comparison */}
+            <div className="lg:col-span-8">
+
+              {/* Column headers */}
+              <div className="grid grid-cols-[1fr_auto_1fr] mb-4 ml-16">
+                <span className="text-xs font-bold uppercase tracking-widest text-red-500">WITHOUT LUMINYX</span>
+                <span className="w-24" />
+                <span className="text-xs font-bold uppercase tracking-widest text-emerald-600">WITH LUMINYX</span>
+              </div>
+
+              {/* Division groups */}
+              {[
+                {
+                  icon: Users,
+                  label: "Talent",
+                  rows: [
+                    { problem: "Siloed vendors with no cross-division visibility", solution: "Unified intelligence across all talent management layers" },
+                    { problem: "Ad-hoc talent placements without market intelligence", solution: "Precision-matched talent informed by real-time data" },
+                  ],
+                },
+                {
+                  icon: GraduationCap,
+                  label: "Education",
+                  rows: [
+                    { problem: "Fragmented education-to-employment pathways", solution: "End-to-end institutional mapping with live outcome tracking" },
+                    { problem: "Lack of alignment with industry needs and outcomes", solution: "Industry-aligned curricula with measurable impact" },
+                  ],
+                },
+                {
+                  icon: Plane,
+                  label: "Mobility",
+                  rows: [
+                    { problem: "Disconnected mobility providers and service layers", solution: "Unified mobility ecosystem across regions" },
+                    { problem: "Inconsistent traveler and logistics experience", solution: "Seamless and consistent end-to-end experiences" },
+                  ],
+                },
+              ].map((group, gi) => (
+                <div key={group.label} className={`flex gap-3 items-start ${gi > 0 ? 'mt-6' : ''}`}>
+
+                  {/* Division icon + label — left column */}
+                  <div className="flex flex-col items-center gap-2 w-14 shrink-0 pt-2">
+                    <div
+                      className="w-12 h-12 rounded-full flex items-center justify-center"
+                      style={{ background: "#F5F3FF", border: "1px solid #DDD6FE" }}
+                    >
+                      <group.icon className="w-5 h-5" style={{ color: "#6D28D9" }} />
+                    </div>
+                    <span style={{ color: "#6D28D9", fontWeight: 600, fontSize: "12px" }}>{group.label}</span>
+                  </div>
+
+                  {/* Comparison rows */}
+                  <div className="flex-1">
+                    {group.rows.map((row, ri) => (
+                      <div
+                        key={ri}
+                        style={{
+                          display: "grid",
+                          gridTemplateColumns: "1fr auto 1fr",
+                          alignItems: "center",
+                          gap: "8px",
+                          marginBottom: "8px",
+                        }}
+                      >
+                        {/* Problem card */}
+                        <div style={{
+                          border: "2px solid #f87171",
+                          borderRadius: "14px",
+                          background: "#ffffff",
+                          padding: "12px 16px",
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "10px",
+                          opacity: 1,
+                          visibility: "visible",
+                        }}>
+                          <div style={{
+                            width: "20px", height: "20px", borderRadius: "50%",
+                            background: "#fff1f2", border: "1px solid #fca5a5",
+                            display: "flex", alignItems: "center", justifyContent: "center",
+                            flexShrink: 0,
+                          }}>
+                            <X style={{ width: "12px", height: "12px", color: "#ef4444" }} strokeWidth={2.5} />
+                          </div>
+                          <span style={{ fontSize: "13px", color: "#374151", lineHeight: "1.4" }}>
+                            {row.problem}
+                          </span>
+                        </div>
+
+                        {/* Animated cascading arrows */}
+                        <div style={{ display: "flex", alignItems: "center", gap: "3px", padding: "0 8px" }}>
+                          {[
+                            { opacity: 0.15, anim: "arrowPulse1" },
+                            { opacity: 0.35, anim: "arrowPulse2" },
+                            { opacity: 0.60, anim: "arrowPulse3" },
+                            { opacity: 0.85, anim: "arrowPulse4" },
+                          ].map((arrow, i) => (
+                            <ChevronRight
+                              key={i}
+                              style={{
+                                width: "18px",
+                                height: "18px",
+                                color: "#6D28D9",
+                                opacity: arrow.opacity,
+                                animation: `${arrow.anim} 1.5s ease-in-out ${i * 0.15}s infinite`,
+                                flexShrink: 0,
+                              }}
+                              strokeWidth={2.5}
+                            />
+                          ))}
+                        </div>
+
+                        {/* Solution card */}
+                        <div style={{
+                          border: "2px solid #34d399",
+                          borderRadius: "14px",
+                          background: "#ffffff",
+                          padding: "12px 16px",
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "10px",
+                          opacity: 1,
+                          visibility: "visible",
+                        }}>
+                          <div style={{
+                            width: "20px", height: "20px", borderRadius: "50%",
+                            background: "#ecfdf5", border: "1px solid #6ee7b7",
+                            display: "flex", alignItems: "center", justifyContent: "center",
+                            flexShrink: 0,
+                          }}>
+                            <Check style={{ width: "12px", height: "12px", color: "#10b981" }} strokeWidth={2.5} />
+                          </div>
+                          <span style={{ fontSize: "13px", color: "#111827", fontWeight: 500, lineHeight: "1.4" }}>
+                            {row.solution}
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                </div>
+              ))}
+
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ─── THE SOLUTION ─────────────────────────────────────────────────────── */}
       <section className="py-16 relative overflow-hidden">
@@ -226,7 +444,7 @@ export default function HomePage() {
               </div>
 
               <h3 className="font-display text-2xl font-bold text-white mb-8">
-                Five divisions.<br />
+                Three divisions.<br />
                 <span className="text-accent-purple">One operating intelligence.</span>
               </h3>
 
@@ -288,20 +506,20 @@ export default function HomePage() {
 
               <h2 className="font-display text-4xl md:text-5xl font-bold text-ink leading-tight">
                 One Platform.{" "}
-                <span className="text-primary-brand">Five Divisions.</span>{" "}
+                <span className="text-primary-brand">Three Divisions.</span>{" "}
                 Zero Gaps.
               </h2>
 
               <p className="mt-6 text-ink-muted leading-relaxed text-lg">
-                The Luminyx Platform is the connective tissue between our five divisions.
+                The Luminyx Platform is the connective tissue between our three divisions.
                 It aggregates data, surfaces insights, automates workflows, and ensures
                 every engagement benefits from the full weight of our cross-divisional intelligence.
               </p>
 
               <p className="mt-4 text-ink-muted leading-relaxed">
                 Unlike point solutions, the platform grows more powerful with each engagement.
-                Talent data informs advisory strategy. Advisory intelligence shapes education design.
-                Technology underpins all of it.
+                Talent data informs education design. Mobility intelligence keeps every
+                engagement grounded in real market movement.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
@@ -318,7 +536,7 @@ export default function HomePage() {
               </div>
 
               <div className="mt-8">
-                <Link href="/ecosystem/technology" className="btn-primary inline-flex group">
+                <Link href="/ecosystem" className="btn-primary inline-flex group">
                   Explore the Platform
                   <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </Link>
@@ -332,7 +550,7 @@ export default function HomePage() {
       {/* ─── HOW ENGAGEMENTS UNFOLD ────────────────────────────────────────── */}
       <EngagementTimeline />
 
-      {/* ─── FIVE DIVISIONS ────────────────────────────────────────────────── */}
+      {/* ─── THREE DIVISIONS ───────────────────────────────────────────────── */}
       <DivisionsShowcase />
 
       {/* ─── AFRICA FOCUS ─────────────────────────────────────────────────── */}
@@ -478,7 +696,7 @@ export default function HomePage() {
               <p className="text-white/70 text-lg max-w-xl mx-auto mb-10 leading-relaxed">
                 Start with a complimentary 90-minute diagnostic call. No
                 commitment required. We will map your current state and identify
-                the highest-leverage opportunities across all five divisions.
+                the highest-leverage opportunities across all three divisions.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-primary-dark font-semibold hover:scale-105 transition-transform shadow-elevated">

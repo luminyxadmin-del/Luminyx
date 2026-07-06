@@ -11,6 +11,8 @@ const config: Config = {
     "border-emerald-400",
     "bg-red-50",
     "bg-emerald-50",
+    "text-red-500",
+    "text-emerald-600",
   ],
   theme: {
     extend: {

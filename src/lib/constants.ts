@@ -2,7 +2,7 @@ export const SITE = {
   name: "LUMINYX",
   tagline: "One Ecosystem. Endless Opportunities.",
   description:
-    "Luminyx is the premier enterprise ecosystem bridging high-end AI technology with the vibrant potential of the African continent.",
+    "Luminyx is the premier enterprise ecosystem bridging education, talent, and mobility with the vibrant potential of the African continent.",
   url: "https://luminyx.com",
   email: "hello@luminyx.com",
   phone: "+254 700 000 000",
@@ -26,16 +26,6 @@ export const NAV_LINKS: NavItem[] = [
     label: "Ecosystem",
     href: "/ecosystem",
     children: [
-      {
-        label: "Technology",
-        href: "/ecosystem/technology",
-        description: "AI-powered enterprise solutions",
-      },
-      {
-        label: "Advisory",
-        href: "/ecosystem/advisory",
-        description: "AI enterprise strategy",
-      },
       {
         label: "Talent",
         href: "/ecosystem/talent",
@@ -67,8 +57,6 @@ export const FOOTER_LINKS = {
     { label: "Contact", href: "/contact" },
   ],
   ecosystem: [
-    { label: "Technology", href: "/ecosystem/technology" },
-    { label: "Advisory", href: "/ecosystem/advisory" },
     { label: "Talent Network", href: "/ecosystem/talent" },
     { label: "Mobility", href: "/ecosystem/mobility" },
     { label: "Education", href: "/ecosystem/education" },

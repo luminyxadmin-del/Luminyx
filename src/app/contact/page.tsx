@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = {
   title: "Contact — Let's Build the Future Together",
   description:
-    "Get in touch with the Luminyx team — partnerships, talent, advisory and travel inquiries handled by dedicated specialists.",
+    "Get in touch with the Luminyx team — partnerships, talent, and travel inquiries handled by dedicated specialists.",
 };
 
 export default function ContactPage() {
@@ -35,7 +35,7 @@ export default function ContactPage() {
           </h1>
           <p className="mt-5 text-white/60 text-lg max-w-xl leading-relaxed">
             Whether you&apos;re exploring a partnership, joining the talent network,
-            commissioning advisory work, or just curious — we answer every message personally.
+            or just curious — we answer every message personally.
           </p>
 
           {/* 3 quick stat pills */}
@@ -87,7 +87,6 @@ export default function ContactPage() {
                 <label className="text-xs font-medium text-ink-muted mb-1.5 block">How can we help?</label>
                 <select className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-primary-brand/20 focus:border-primary-brand bg-white">
                   <option>Partnership inquiry</option>
-                  <option>Advisory engagement</option>
                   <option>Talent — hiring</option>
                   <option>Talent — looking for opportunities</option>
                   <option>Mobility</option>

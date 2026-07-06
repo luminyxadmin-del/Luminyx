@@ -32,7 +32,6 @@ export const metadata: Metadata = {
     "East Africa",
     "Tech Ecosystem",
     "African Talent",
-    "Strategic Advisory",
   ],
   authors: [{ name: "Luminyx" }],
   openGraph: {

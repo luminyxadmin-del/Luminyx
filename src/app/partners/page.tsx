@@ -188,7 +188,7 @@ export default function PartnersPage() {
                 { value: "18+", label: "Govt Partnerships" },
                 { value: "1,000+", label: "Institutional Partners" },
                 { value: "14", label: "Countries" },
-                { value: "$1.8B", label: "Advisory Influence" },
+                { value: "$1.8B", label: "Enterprise Influence" },
               ].map((s) => (
                 <div key={s.label} className="rounded-2xl p-5 bg-white/5 border border-white/10 backdrop-blur-sm">
                   <div className="font-display text-3xl font-bold text-white mb-1">{s.value}</div>

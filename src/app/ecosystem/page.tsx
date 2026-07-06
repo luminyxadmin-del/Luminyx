@@ -3,8 +3,6 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
-  Brain,
-  Cpu,
   Users,
   Car,
   GraduationCap,
@@ -15,24 +13,6 @@ import { Reveal } from "@/components/Reveal";
 import { CTASection } from "@/components/CTASection";
 
 const VERTICALS = [
-  {
-    href: "/ecosystem/technology",
-    icon: Cpu,
-    title: "Technology",
-    subtitle: "AI-Powered Enterprise Solutions",
-    desc: "Proprietary AI and cloud infrastructure built for low-latency African operations and enterprise-scale workloads.",
-    accent: "bg-gradient-primary-brand",
-    stat: { value: "99.99%", label: "Uptime SLA" },
-  },
-  {
-    href: "/ecosystem/advisory",
-    icon: Brain,
-    title: "Advisory",
-    subtitle: "AI Enterprise Strategy",
-    desc: "Market entry, regulatory compliance, and risk-mitigation strategies tailored for Africa's complex enterprise landscape.",
-    accent: "bg-gradient-dark",
-    stat: { value: "500+", label: "Clients Served" },
-  },
   {
     href: "/ecosystem/talent",
     icon: Users,
@@ -82,7 +62,7 @@ export default function EcosystemPage() {
               The Luminyx Ecosystem
             </div>
             <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] text-navy text-balance">
-              Five verticals.{" "}
+              Three verticals.{" "}
               <span className="gradient-text">One integrated platform.</span>
             </h1>
             <p className="mt-6 text-lg md:text-xl text-slate max-w-2xl mx-auto leading-relaxed">

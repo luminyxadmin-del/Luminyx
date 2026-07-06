@@ -9,22 +9,14 @@ import {
   Menu,
   X,
   ArrowUpRight,
-  BrainCircuit,
   GraduationCap,
   Users,
   Plane,
-  Cpu,
 } from "lucide-react";
 import { SITE } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 const ecosystemLinks = [
-  {
-    label: "AI Advisory",
-    href: "/ecosystem/advisory",
-    icon: BrainCircuit,
-    description: "Policy intelligence and institutional strategy",
-  },
   {
     label: "Education",
     href: "/ecosystem/education",
@@ -43,17 +35,11 @@ const ecosystemLinks = [
     icon: Plane,
     description: "End-to-end cross-border movement infrastructure",
   },
-  {
-    label: "Technology",
-    href: "/ecosystem/technology",
-    icon: Cpu,
-    description: "The intelligence platform powering every division",
-  },
 ];
 
 const TOP_LINKS = [
-  { label: "Platform", href: "/ecosystem/technology" },
   { label: "Africa", href: "/africa" },
+  { label: "About", href: "/about" },
   { label: "Partners", href: "/partners" },
 ];
 
@@ -165,16 +151,6 @@ export function Navbar() {
                         </div>
                       </Link>
                     ))}
-                  </div>
-
-                  <div className="mt-2 pt-2 border-t border-white/[0.08]">
-                    <Link
-                      href="/ecosystem/technology"
-                      className="flex items-center justify-between px-4 py-2.5 rounded-xl bg-primary-brand/20 border border-primary-brand/30 hover:bg-primary-brand/35 transition-colors"
-                    >
-                      <span className="text-sm font-semibold text-white">View Platform →</span>
-                      <span className="text-xs text-white/40">The intelligence layer</span>
-                    </Link>
                   </div>
                 </motion.div>
               )}

@@ -4,12 +4,11 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  BrainCircuit,
   GraduationCap,
   Users,
   Plane,
-  Cpu,
   ArrowUpRight,
+  Check,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -28,21 +27,6 @@ interface Division {
 const DIVISIONS: Division[] = [
   {
     number: "01",
-    icon: BrainCircuit,
-    name: "AI Advisory",
-    tagline: "Strategic intelligence for institutions and enterprises",
-    description:
-      "We advise governments, development finance institutions, and large enterprises on workforce strategy, policy frameworks, and AI-led transformation across emerging markets.",
-    capabilities: [
-      "Government & institutional strategy",
-      "Workforce policy frameworks",
-      "Leadership & organisational development",
-    ],
-    stat: { value: "18+", label: "Government engagements" },
-    href: "/ecosystem/advisory",
-  },
-  {
-    number: "02",
     icon: GraduationCap,
     name: "Education",
     tagline: "Connecting academic supply to real employer demand",
@@ -57,7 +41,7 @@ const DIVISIONS: Division[] = [
     href: "/ecosystem/education",
   },
   {
-    number: "03",
+    number: "02",
     icon: Users,
     name: "Talent",
     tagline: "Precision hiring for growth-market organisations",
@@ -72,7 +56,7 @@ const DIVISIONS: Division[] = [
     href: "/ecosystem/talent",
   },
   {
-    number: "04",
+    number: "03",
     icon: Plane,
     name: "Mobility",
     tagline: "End-to-end infrastructure for cross-border talent movement",
@@ -85,21 +69,6 @@ const DIVISIONS: Division[] = [
     ],
     stat: { value: "40+", label: "Destination countries" },
     href: "/ecosystem/mobility",
-  },
-  {
-    number: "05",
-    icon: Cpu,
-    name: "Technology",
-    tagline: "The intelligence layer powering every Luminyx decision",
-    description:
-      "A unified AI platform that aggregates data across all five divisions — surfacing insights, automating workflows, and ensuring every engagement benefits from the full weight of cross-divisional intelligence.",
-    capabilities: [
-      "AI-driven matching & routing",
-      "Workforce analytics & forecasting",
-      "Education-to-employment mapping",
-    ],
-    stat: { value: "54", label: "African markets covered" },
-    href: "/ecosystem/technology",
   },
 ];
 
@@ -122,12 +91,12 @@ function DetailPanel({ division }: { division: Division }) {
       {/* Corner glow */}
       <div
         className="absolute bottom-0 right-0 w-72 h-72 rounded-full blur-3xl pointer-events-none"
-        style={{ background: "radial-gradient(circle,rgba(109,40,217,0.08),transparent 70%)" }}
+        style={{ background: "radial-gradient(circle,rgba(109,40,217,0.10),transparent 70%)" }}
       />
 
-      <div className="relative">
+      <div className="relative h-full flex flex-col">
         {/* Division chip */}
-        <div className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-[0.18em] text-primary-brand bg-primary-light border border-primary-brand/10 mb-6">
+        <div className="self-start inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-[0.18em] text-primary-brand bg-primary-light border border-primary-brand/10 mb-6">
           Division {division.number}
         </div>
 
@@ -137,7 +106,7 @@ function DetailPanel({ division }: { division: Division }) {
             className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0"
             style={{
               background: "linear-gradient(135deg,#6D28D9,#A78BFA)",
-              boxShadow: "0 4px 20px rgba(109,40,217,0.35)",
+              boxShadow: "0 8px 24px -4px rgba(109,40,217,0.45)",
             }}
           >
             <Icon className="w-7 h-7 text-white" />
@@ -155,18 +124,20 @@ function DetailPanel({ division }: { division: Division }) {
           {division.description}
         </p>
 
-        {/* Capabilities */}
-        <div className="space-y-2.5 mb-8">
+        {/* Capabilities — refined check-in-circle treatment */}
+        <div className="space-y-3 mb-8">
           {division.capabilities.map((cap) => (
             <div key={cap} className="flex items-center gap-3">
-              <div className="w-1.5 h-1.5 rounded-full bg-primary-brand shrink-0" />
+              <div className="w-5 h-5 rounded-full bg-primary-light flex items-center justify-center shrink-0">
+                <Check className="w-3 h-3 text-primary-brand" strokeWidth={3} />
+              </div>
               <span className="text-sm text-ink-muted">{cap}</span>
             </div>
           ))}
         </div>
 
-        {/* Stat + link */}
-        <div className="flex items-center justify-between pt-6 border-t border-light-gray">
+        {/* Stat + CTA button */}
+        <div className="mt-auto flex items-center justify-between pt-6 border-t border-light-gray">
           <div>
             <div className="font-display text-3xl font-bold text-primary-brand leading-none">
               {division.stat.value}
@@ -177,7 +148,11 @@ function DetailPanel({ division }: { division: Division }) {
           </div>
           <Link
             href={division.href}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-primary-brand hover:text-primary-dark transition-colors group"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white transition-all hover:scale-105 hover:shadow-lg group"
+            style={{
+              background: "linear-gradient(135deg,#6D28D9,#8B5CF6)",
+              boxShadow: "0 8px 20px -6px rgba(109,40,217,0.5)",
+            }}
           >
             Explore Division
             <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -253,7 +228,7 @@ export function DivisionsShowcase() {
           >
             <div className="chip mb-5 inline-flex">Our Divisions</div>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-navy tracking-tight leading-[1.1] mb-4">
-              Five Divisions.{" "}
+              Three Divisions.{" "}
               <span className="gradient-text">One Infrastructure.</span>
             </h2>
             <p className="text-slate max-w-lg mx-auto">
@@ -267,16 +242,18 @@ export function DivisionsShowcase() {
         <div className="flex lg:hidden overflow-x-auto gap-2 pb-3 -mx-4 px-4 scrollbar-hide mb-6">
           {DIVISIONS.map((d, i) => {
             const Icon = d.icon;
+            const isActive = activeIndex === i;
             return (
               <button
                 key={d.number}
                 onClick={() => handleSelect(i)}
                 className={cn(
                   "flex-shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300",
-                  activeIndex === i
-                    ? "bg-primary-brand text-white shadow-sm"
+                  isActive
+                    ? "text-white shadow-sm"
                     : "bg-white border border-light-gray text-slate hover:border-primary-brand/30"
                 )}
+                style={isActive ? { background: "linear-gradient(135deg,#6D28D9,#A78BFA)" } : undefined}
               >
                 <Icon className="w-3.5 h-3.5" />
                 {d.name}
@@ -286,15 +263,16 @@ export function DivisionsShowcase() {
         </div>
 
         {/* Desktop: two-column layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-5">
+        <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-6">
 
-          {/* ── Left: vertical tab list ── */}
+          {/* ── Left: vertical tab list — floating segmented card ── */}
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="hidden lg:flex flex-col gap-1 self-start"
+            className="hidden lg:flex flex-col gap-2 self-start p-2 rounded-3xl bg-white/60 border border-white/80 backdrop-blur-sm"
+            style={{ boxShadow: "0 4px 24px -8px rgba(109,40,217,0.08)" }}
           >
             {DIVISIONS.map((d, i) => {
               const Icon = d.icon;
@@ -304,32 +282,41 @@ export function DivisionsShowcase() {
                   key={d.number}
                   onClick={() => handleSelect(i)}
                   className={cn(
-                    "relative flex items-center gap-4 px-5 py-4 rounded-xl text-left transition-all duration-300 group w-full",
-                    isActive ? "bg-primary-light/70" : "hover:bg-primary-light/25"
+                    "relative flex items-center gap-4 px-5 py-4 rounded-2xl text-left transition-all duration-300 group w-full overflow-hidden",
+                    isActive ? "bg-white" : "hover:bg-white/70"
                   )}
+                  style={isActive ? { boxShadow: "0 8px 24px -8px rgba(109,40,217,0.25)" } : undefined}
                 >
-                  {/* Active border — absolute so it never shifts the row's height */}
+                  {/* Auto-rotate progress underline — only on the active row */}
                   {isActive && (
-                    <motion.div
-                      layoutId="division-tab-border"
-                      className="absolute left-0 inset-y-2 w-[3px] bg-primary-brand rounded-full"
-                      transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                    <div
+                      className="absolute bottom-0 left-0 h-[2px] bg-primary-brand rounded-full"
+                      style={{
+                        animation: `divisionProgress ${CYCLE_SECS}s linear`,
+                        animationPlayState: isPaused ? "paused" : "running",
+                        animationFillMode: "forwards",
+                      }}
                     />
                   )}
 
-                  {/* Step number — bolder */}
-                  <span className="text-sm font-semibold text-ink-faint w-5 shrink-0">
+                  {/* Step number */}
+                  <span
+                    className={cn(
+                      "text-sm font-bold w-5 shrink-0 transition-colors duration-300",
+                      isActive ? "text-primary-brand" : "text-ink-faint"
+                    )}
+                  >
                     {d.number}
                   </span>
 
                   {/* Icon circle */}
                   <div
-                    className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 transition-all duration-300"
+                    className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300"
                     style={
                       isActive
                         ? {
                             background: "linear-gradient(135deg,#6D28D9,#A78BFA)",
-                            boxShadow: "0 2px 12px rgba(109,40,217,0.32)",
+                            boxShadow: "0 4px 14px rgba(109,40,217,0.4)",
                           }
                         : { background: "#EDE9FE", border: "1px solid rgba(109,40,217,0.12)" }
                     }
@@ -342,7 +329,7 @@ export function DivisionsShowcase() {
                     />
                   </div>
 
-                  {/* Name + tagline — bolder and more visible */}
+                  {/* Name + tagline */}
                   <div className="flex-1 min-w-0">
                     <div
                       className={cn(
@@ -385,13 +372,20 @@ export function DivisionsShowcase() {
               layout impact.
             */}
             <div
-              className="relative rounded-2xl overflow-hidden border border-primary-brand/10"
+              className="relative rounded-3xl overflow-hidden"
               style={{
-                minHeight: "480px",
+                minHeight: "420px",
                 background: "#FFFFFF",
-                boxShadow: "0 8px 40px -8px rgba(109,40,217,0.12)",
+                boxShadow: "0 20px 60px -12px rgba(109,40,217,0.18)",
+                border: "1px solid rgba(109,40,217,0.10)",
               }}
             >
+              {/* Top gradient accent bar */}
+              <div
+                className="absolute top-0 left-0 right-0 h-1 pointer-events-none"
+                style={{ background: "linear-gradient(90deg,#6D28D9,#A78BFA,#6D28D9)" }}
+              />
+
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeIndex}
