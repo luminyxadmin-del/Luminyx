@@ -48,11 +48,12 @@ const CORRIDORS = [
   },
 ];
 
-const PARTNERS: { name: string; logo: string; bg: string; imgClass?: string }[] = [
+const PARTNERS: { name: string; logo: string; bg: string; imgClass?: string; zoom?: number }[] = [
   {
-    name: "Aurix Works",
-    logo: "https://res.cloudinary.com/dtg3lepr4/image/upload/v1783362073/aurix_works_logo_hires_transparent_foftmn.png",
-    bg: "#15131f",
+    name: "Partner",
+    logo: "https://res.cloudinary.com/dtg3lepr4/image/upload/v1783487223/PHOTO-2026-07-06-12-05-23_rqfmcz.jpg",
+    bg: "#ffffff",
+    zoom: 1.6,
   },
   {
     name: "Emilestones",
@@ -230,6 +231,7 @@ export default function HomePage() {
                   padding: "16px 24px",
                   borderRadius: "16px",
                   boxShadow: p.bg === "#ffffff" ? "0 8px 24px -8px rgba(0,0,0,0.35)" : "none",
+                  overflow: "hidden",
                 }}
               >
                 <Image
@@ -238,7 +240,7 @@ export default function HomePage() {
                   width={140}
                   height={56}
                   className={`h-12 w-auto object-contain ${p.imgClass ?? ""}`}
-                  style={{ maxWidth: "130px", display: "block" }}
+                  style={{ maxWidth: "130px", display: "block", transform: p.zoom ? `scale(${p.zoom})` : undefined }}
                 />
               </div>
             ))}
