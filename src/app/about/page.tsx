@@ -58,7 +58,7 @@ export default function AboutPage() {
 
       {/* OUR STORY */}
       <section className="py-16 container-xl">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-5">
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden">
               <Image
@@ -68,10 +68,26 @@ export default function AboutPage() {
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/60 via-transparent to-transparent" />
+
+              {/* Top — glass chip */}
+              <div
+                className="absolute top-6 left-6 inline-flex items-center rounded-full px-3 py-1.5"
+                style={{ background: "rgba(255,255,255,0.12)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", border: "1px solid rgba(255,255,255,0.2)" }}
+              >
+                <span className="text-white" style={{ fontSize: "12px" }}>Est. 2019 · Dubai, UAE</span>
+              </div>
+
+              {/* Bottom — location card */}
               <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20">
                 <div className="font-display text-2xl font-bold text-white">Dubai, UAE</div>
                 <div className="text-sm text-white/60 mt-1">Global Intelligence Headquarters</div>
               </div>
+
+              {/* Right edge — thin vertical gradient line */}
+              <div
+                className="absolute right-0 top-0 bottom-0"
+                style={{ width: "3px", background: "linear-gradient(180deg, transparent, #6D28D9, transparent)" }}
+              />
             </div>
           </div>
           <div className="lg:col-span-7">
@@ -99,6 +115,15 @@ export default function AboutPage() {
                   <div className="text-xs text-ink-muted mt-1">{s.label}</div>
                 </div>
               ))}
+            </div>
+
+            <div style={{ marginTop: "2rem", paddingTop: "2rem", borderTop: "1px solid rgba(109,40,217,0.1)" }}>
+              <div style={{ fontSize: "12px", fontWeight: 600, color: "#6D28D9", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "0.75rem" }}>
+                Why now
+              </div>
+              <p style={{ fontSize: "15px", color: "#374151", lineHeight: "1.7" }}>
+                Africa, India, and the GCC are producing more graduates, more skilled talent, and more cross-border movement than at any point in history — but the systems tracking that movement are still built for a slower, more local world. Governments are planning workforce policy on stale census data. Employers are hiring on gut instinct instead of market signal. That gap is closing fast, and whoever builds the infrastructure first sets the standard everyone else has to work within. We intend for that to be us.
+              </p>
             </div>
           </div>
         </div>

@@ -64,27 +64,6 @@ const PILLARS_STRATEGIC = [
   },
 ];
 
-const SUCCESS_STORIES = [
-  {
-    title: "Vertical Oasis Nairobi",
-    location: "Kenya · AgriTech",
-    desc: "Increased urban crop yield by 380% using Luminyx Edge AI controllers.",
-    image: IMAGES.fintech,
-  },
-  {
-    title: "Kigali Innovation City",
-    location: "Rwanda · Smart City",
-    desc: "Luminyx provided the core 5,000 backbone for the nation's premier tech hub.",
-    image: IMAGES.techCity,
-  },
-  {
-    title: "Abyssinia Solar Grid",
-    location: "Ethiopia · Energy",
-    desc: "Decentralized smart-grid management for 800,000 households.",
-    image: IMAGES.solar,
-  },
-];
-
 export default function AfricaPage() {
   return (
     <div>
@@ -310,50 +289,6 @@ export default function AfricaPage() {
         </div>
       </section>
 
-      {/* SUCCESS STORIES */}
-      <section className="py-section-lg bg-white">
-        <div className="container-xl">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-14">
-            <div className="max-w-xl">
-              <div className="chip mb-5">Real Impact</div>
-              <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-navy leading-tight">
-                Success Stories
-              </h2>
-              <p className="mt-4 text-slate">
-                Real partnerships, real results across the continent.
-              </p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {SUCCESS_STORIES.map((s, i) => (
-              <Reveal key={s.title} delay={i * 0.1}>
-                <div className="relative aspect-[4/5] rounded-3xl overflow-hidden group cursor-pointer">
-                  <Image
-                    src={s.image}
-                    alt={s.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-7">
-                    <div className="text-xs uppercase tracking-widest text-accent-purple font-medium mb-2">
-                      {s.location}
-                    </div>
-                    <h3 className="font-display text-2xl font-bold text-white mb-2">
-                      {s.title}
-                    </h3>
-                    <p className="text-sm text-white/80 leading-relaxed">{s.desc}</p>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      
       {/* DARK CTA */}
       <section className="py-16 px-4 md:px-8">
         <div className="relative overflow-hidden rounded-3xl bg-primary-dark">

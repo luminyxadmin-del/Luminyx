@@ -1,6 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Twitter, Linkedin, Github } from "lucide-react";
-import { SITE } from "@/lib/constants";
 
 const DIVISION_LINKS = [
   { label: "Education", href: "/ecosystem/education" },
@@ -57,15 +57,24 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12">
           {/* Brand column */}
           <div className="lg:col-span-5">
-            <Link href="/" className="flex items-center gap-2.5 mb-6">
-              <div className="w-9 h-9 rounded-xl bg-gradient-primary-brand flex items-center justify-center shadow-[0_0_16px_rgba(109,40,217,0.4)]">
-                <span className="font-display font-bold text-white text-lg">L</span>
-              </div>
-              <span className="font-display text-xl font-bold tracking-tight text-navy">
-                {SITE.name} Group
-              </span>
+            <Link href="/" className="inline-flex items-center mb-6">
+              <Image
+                src="https://res.cloudinary.com/dtg3lepr4/image/upload/v1783523985/Luminyx_ventures_Final_logo_03_fpyqls.png"
+                alt="Luminyx Group"
+                width={628}
+                height={200}
+                quality={100}
+                className="object-contain"
+                style={{
+                  height: "52px",
+                  width: "auto",
+                  filter: "none",
+                  opacity: 1,
+                  display: "block",
+                }}
+              />
             </Link>
-            <p className="text-slate max-w-sm mb-8 leading-relaxed text-sm">
+            <p className="max-w-sm mb-8 leading-relaxed text-sm" style={{ color: "#374151" }}>
               An intelligence infrastructure firm connecting emerging markets
               through education, talent, and mobility.
               Headquartered in Dubai, UAE.
@@ -76,9 +85,12 @@ export function Footer() {
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="group w-10 h-10 rounded-full border border-light-gray flex items-center justify-center hover:bg-primary-brand hover:border-primary-brand transition-all duration-200"
+                  className="group w-10 h-10 rounded-full border border-light-gray flex items-center justify-center hover:border-primary-brand/30 transition-all duration-200"
                 >
-                  <Icon className="w-4 h-4 text-ink-faint group-hover:text-white transition-colors duration-200" />
+                  <Icon
+                    className="w-4 h-4 opacity-70 group-hover:opacity-100 transition-opacity duration-200"
+                    style={{ color: "#6D28D9" }}
+                  />
                 </a>
               ))}
             </div>

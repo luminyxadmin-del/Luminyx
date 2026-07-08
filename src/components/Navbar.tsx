@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -13,7 +14,6 @@ import {
   Users,
   Plane,
 } from "lucide-react";
-import { SITE } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 const ecosystemLinks = [
@@ -51,7 +51,7 @@ export function Navbar() {
   const [mobilEcosystemOpen, setMobileEcosystemOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => setScrolled(window.scrollY > 80);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -70,24 +70,27 @@ export function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-4 pt-3">
       <div
-        className={cn(
-          "flex items-center justify-between px-6 py-3 rounded-2xl border border-white/10 backdrop-blur-md transition-all duration-300",
-          scrolled
-            ? "bg-black/30 shadow-[0_8px_40px_rgba(0,0,0,0.2)]"
-            : "bg-black/20 shadow-[0_8px_32px_rgba(0,0,0,0.12)]"
-        )}
+        className="flex items-center justify-between px-6 py-3 rounded-2xl transition-all duration-300"
+        style={{
+          background: scrolled ? "rgba(255,255,255,0.92)" : "rgba(0,0,0,0.15)",
+          backdropFilter: scrolled ? "blur(20px)" : "blur(12px)",
+          WebkitBackdropFilter: scrolled ? "blur(20px)" : "blur(12px)",
+          border: scrolled ? "1px solid rgba(109,40,217,0.08)" : "1px solid rgba(255,255,255,0.1)",
+          boxShadow: scrolled ? "0 8px 40px rgba(0,0,0,0.1)" : "0 8px 32px rgba(0,0,0,0.12)",
+        }}
       >
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5 group">
-          <div className="relative">
-            <div className="w-9 h-9 rounded-xl bg-gradient-primary-brand flex items-center justify-center shadow-[0_0_16px_rgba(109,40,217,0.4)]">
-              <span className="font-display font-bold text-white text-lg">L</span>
-            </div>
-            <div className="absolute inset-0 rounded-xl bg-gradient-primary-brand blur-md opacity-40 group-hover:opacity-70 transition-opacity -z-10" />
-          </div>
-          <span className="font-display font-bold text-lg text-white whitespace-nowrap">
-            LUMIN<span className="text-accent-purple">YX</span>
-          </span>
+        <Link href="/" className="flex items-center group">
+          <Image
+            src="https://res.cloudinary.com/dtg3lepr4/image/upload/v1783523985/Luminyx_ventures_Final_logo_03_fpyqls.png"
+            alt="Luminyx Ventures"
+            width={628}
+            height={200}
+            priority
+            quality={100}
+            className="object-contain"
+            style={{ height: "36px", width: "auto", filter: "none", opacity: 1 }}
+          />
         </Link>
 
         {/* Desktop Nav */}
@@ -101,9 +104,13 @@ export function Navbar() {
             <button
               className={cn(
                 "flex items-center gap-1 px-4 py-2 rounded-full text-sm font-semibold transition-all",
-                isActive("/ecosystem")
-                  ? "text-white"
-                  : "text-white/80 hover:text-white"
+                scrolled
+                  ? isActive("/ecosystem")
+                    ? "text-[#111827]"
+                    : "text-[#374151] hover:text-[#6D28D9]"
+                  : isActive("/ecosystem")
+                    ? "text-white"
+                    : "text-white/80 hover:text-white"
               )}
             >
               Ecosystem
@@ -163,9 +170,13 @@ export function Navbar() {
               href={item.href}
               className={cn(
                 "px-4 py-2 rounded-full text-sm font-semibold transition-all",
-                isActive(item.href)
-                  ? "text-white"
-                  : "text-white/80 hover:text-white"
+                scrolled
+                  ? isActive(item.href)
+                    ? "text-[#111827]"
+                    : "text-[#374151] hover:text-[#6D28D9]"
+                  : isActive(item.href)
+                    ? "text-white"
+                    : "text-white/80 hover:text-white"
               )}
             >
               {item.label}
@@ -183,7 +194,12 @@ export function Navbar() {
 
         {/* Mobile menu button */}
         <button
-          className="lg:hidden p-2 rounded-lg hover:bg-bg-subtle transition-colors text-navy"
+          className={cn(
+            "lg:hidden p-2 rounded-lg transition-colors",
+            scrolled
+              ? "text-[#374151] hover:text-[#6D28D9] hover:bg-bg-subtle"
+              : "text-white/80 hover:text-white hover:bg-white/10"
+          )}
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
