@@ -57,7 +57,7 @@ const CORRIDORS = [
   },
 ];
 
-const PARTNERS: { name: string; logo: string; bg: string; imgClass?: string; zoom?: number }[] = [
+const PARTNERS: { name: string; logo: string; bg: string; imgClass?: string; zoom?: number; url?: string }[] = [
   {
     name: "Partner",
     logo: "https://res.cloudinary.com/dtg3lepr4/image/upload/v1783487223/PHOTO-2026-07-06-12-05-23_rqfmcz.jpg",
@@ -68,21 +68,25 @@ const PARTNERS: { name: string; logo: string; bg: string; imgClass?: string; zoo
     name: "Emilestones",
     logo: "https://res.cloudinary.com/dtg3lepr4/image/upload/v1783361344/emilestones_logo_p29vbm.png",
     bg: "#ffffff",
+    url: "https://emilestones.net/",
   },
   {
     name: "Regenesys SAI",
     logo: "https://res.cloudinary.com/dtg3lepr4/image/upload/v1783362138/regenesys-sai_logo_fifyk7.png",
     bg: "#15131f",
+    url: "https://www.regenesys.net/school-of-ai",
   },
   {
     name: "Aurix Works",
     logo: "https://res.cloudinary.com/dtg3lepr4/image/upload/v1783362009/aurix_works_logo_hires_msmdvy.png",
     bg: "#ffffff",
+    url: "https://www.aurix.works/",
   },
   {
     name: "Success Tours",
     logo: "https://res.cloudinary.com/dtg3lepr4/image/upload/v1783362106/success-tours_logo_orjpob.png",
     bg: "#ffffff",
+    url: "https://www.success-tours.com/",
   },
 ];
 
@@ -239,23 +243,21 @@ export default function HomePage() {
             Trusted Partners &amp; Ecosystem
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
-            {PARTNERS.map((p, i) => (
-              <div
-                key={`${p.name}-${i}`}
-                style={{
-                  background: p.bg,
-                  border: p.bg === "#ffffff" ? "1px solid rgba(255,255,255,0.08)" : "1px solid rgba(255,255,255,0.1)",
-                  minWidth: "160px",
-                  height: "80px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  padding: "16px 24px",
-                  borderRadius: "16px",
-                  boxShadow: p.bg === "#ffffff" ? "0 8px 24px -8px rgba(0,0,0,0.35)" : "none",
-                  overflow: "hidden",
-                }}
-              >
+            {PARTNERS.map((p, i) => {
+              const cardStyle: React.CSSProperties = {
+                background: p.bg,
+                border: p.bg === "#ffffff" ? "1px solid rgba(255,255,255,0.08)" : "1px solid rgba(255,255,255,0.1)",
+                minWidth: "160px",
+                height: "80px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                padding: "16px 24px",
+                borderRadius: "16px",
+                boxShadow: p.bg === "#ffffff" ? "0 8px 24px -8px rgba(0,0,0,0.35)" : "none",
+                overflow: "hidden",
+              };
+              const logoImg = (
                 <Image
                   src={p.logo}
                   alt={p.name}
@@ -264,8 +266,25 @@ export default function HomePage() {
                   className={`h-12 w-auto object-contain ${p.imgClass ?? ""}`}
                   style={{ maxWidth: "130px", display: "block", transform: p.zoom ? `scale(${p.zoom})` : undefined }}
                 />
-              </div>
-            ))}
+              );
+              return p.url ? (
+                <a
+                  key={`${p.name}-${i}`}
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={p.name}
+                  style={{ ...cardStyle, transition: "transform 0.3s ease, opacity 0.3s ease" }}
+                  className="hover:opacity-90 hover:scale-105"
+                >
+                  {logoImg}
+                </a>
+              ) : (
+                <div key={`${p.name}-${i}`} style={cardStyle}>
+                  {logoImg}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
