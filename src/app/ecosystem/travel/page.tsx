@@ -205,9 +205,9 @@ export default function TravelPage() {
                 We build the infrastructure that makes cross-border talent movement seamless — from opportunity identification to visa processing, relocation, and integration.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
-                <Link href="/contact" className="btn-primary">
+                <a href="https://www.luminyxtravel.net/" target="_blank" rel="noopener noreferrer" className="btn-primary">
                   Explore Travel <ArrowUpRight className="w-4 h-4" />
-                </Link>
+                </a>
                 <Link href="/ecosystem" className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 text-white hover:bg-white/[0.08] transition-colors text-sm font-medium">
                   View All Divisions
                 </Link>
@@ -374,10 +374,10 @@ export default function TravelPage() {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-medium text-sm tracking-wide transition-all duration-300 hover:scale-105 group" style={{ background: "#F59E0B", color: "#1E1B4B" }}>
+              <a href="https://www.luminyxtravel.net/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-medium text-sm tracking-wide transition-all duration-300 hover:scale-105 group" style={{ background: "#F59E0B", color: "#1E1B4B" }}>
                 Explore Meridian Journeys
                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </Link>
+              </a>
             </div>
           </div>
 
@@ -421,9 +421,9 @@ export default function TravelPage() {
               Whether you&apos;re planning a single executive relocation or a multi-cohort corridor programme, we have the infrastructure to deliver it at any scale.
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-              <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-primary-dark font-semibold hover:scale-105 transition-transform shadow-elevated">
+              <a href="https://www.luminyxtravel.net/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-primary-dark font-semibold hover:scale-105 transition-transform shadow-elevated">
                 Get Started <ArrowUpRight className="w-4 h-4" />
-              </Link>
+              </a>
               <Link href="/ecosystem" className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/20 text-white hover:bg-white/[0.08] transition-colors">
                 Explore Other Divisions
               </Link>

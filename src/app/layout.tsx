@@ -1,8 +1,7 @@
 ﻿import type { Metadata } from "next";
 import { Hanken_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
+import { SiteShell } from "@/components/SiteShell";
 import { SITE } from "@/lib/constants";
 
 const hanken = Hanken_Grotesk({
@@ -56,9 +55,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${hanken.variable} ${inter.variable}`}>
       <body className="text-ink antialiased">
-        <Navbar />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
+        <SiteShell>{children}</SiteShell>
       </body>
     </html>
   );

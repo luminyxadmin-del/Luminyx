@@ -1,5 +1,5 @@
 export const SITE = {
-  name: "LUMINYX",
+  name: "LUMINYX VENTURES",
   tagline: "One Ecosystem. Endless Opportunities.",
   description:
     "Luminyx is the premier enterprise ecosystem bridging advisory, education, talent, travel, and technology with the vibrant potential of the African continent.",
