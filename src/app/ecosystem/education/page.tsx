@@ -7,49 +7,49 @@ import {
   GraduationCap,
   Briefcase,
   Monitor,
-  Award,
+  Globe,
+  MapPin,
   Handshake,
   LineChart,
   CheckCircle2,
 } from "lucide-react";
-import { CapabilityCard } from "@/components/CapabilityCard";
 
 const CAPABILITIES = [
   {
-    icon: GraduationCap,
-    title: "Curriculum Architecture",
+    icon: Globe,
+    title: "Market Entry Strategy",
     description:
-      "Evidence-based redesign of degree and diploma programmes aligned to industry demand signals and emerging skills gaps across target markets.",
-  },
-  {
-    icon: Briefcase,
-    title: "Industry Alignment",
-    description:
-      "Building structured linkages between institutions and employer networks to ensure graduates meet actual hiring requirements in priority sectors.",
-  },
-  {
-    icon: Monitor,
-    title: "Digital Delivery",
-    description:
-      "Deploying blended and fully online learning environments that extend institutional reach without compromising academic quality or learner outcomes.",
-  },
-  {
-    icon: Award,
-    title: "Micro-Credentialing",
-    description:
-      "Designing stackable, industry-recognised credentials that allow learners to signal competence at every career stage — not just at graduation.",
-  },
-  {
-    icon: Handshake,
-    title: "Employer Integration",
-    description:
-      "Embedding employers into curriculum design, assessment panels, and placement processes from day one to ensure graduates are ready on arrival.",
+      "You want to grow in a new country but don't know where to start. We've done it across nine African markets already. We help you understand the regulatory landscape, competitive positioning, and realistic enrollment potential before you commit.",
   },
   {
     icon: LineChart,
-    title: "Outcomes Measurement",
+    title: "Enrollment Growth",
     description:
-      "Designing graduate tracking systems and employer feedback loops that provide institutions with longitudinal impact data to drive continuous improvement.",
+      "We built a sales organisation from 30 to 750 people that drove ZAR 1.5 billion in billing. We know how to build the teams, processes, and conversion systems that turn interest into enrolled students.",
+  },
+  {
+    icon: MapPin,
+    title: "Local Market Intelligence",
+    description:
+      "We have people on the ground in East Africa who understand what students in these markets actually want, what they can pay, and what competitors are offering. No guesswork, no desk research from another continent.",
+  },
+  {
+    icon: Handshake,
+    title: "Institutional Partnerships",
+    description:
+      "We've built relationships with government departments, corporates, and MNCs for institutional enrollment. We help universities land B2B partnerships that deliver cohorts, not just individual applicants.",
+  },
+  {
+    icon: Briefcase,
+    title: "Sales Infrastructure Setup",
+    description:
+      "Most institutions know how to teach but struggle to sell. We help build the sales function from scratch: team structure, KPIs, incentive models, CRM workflows, and training, all based on what we've actually run at scale.",
+  },
+  {
+    icon: Monitor,
+    title: "Digital & EdTech Strategy",
+    description:
+      "Our founding team comes from BYJU'S, WhiteHat Jr, and Regenesys online programmes. We advise institutions on blended delivery, online program launches, and digital student acquisition without overselling what technology can do.",
   },
 ];
 
@@ -101,28 +101,28 @@ const PARTNERS = [
 
 const OUTCOME_KPIS = [
   {
-    value: "87%",
-    label: "Graduate Placement Rate",
-    trend: "12pp vs prior cohort",
-    trendUp: true,
+    value: "30 → 750",
+    label: "Sales Team Scaled",
+    description:
+      "Built from a 30-person team to a 750-person sales organisation across nine markets.",
   },
   {
-    value: "4.2 mo",
-    label: "Avg Time-to-Employment",
-    trend: "1.8 months faster",
-    trendUp: false,
+    value: "ZAR 1.5B",
+    label: "Annual Billing",
+    description:
+      "Grew institutional billing from ZAR 100M to ZAR 1.5B under the founding team's leadership.",
   },
   {
-    value: "140+",
-    label: "Programmes Redesigned",
-    trend: "across 6 sectors",
-    trendUp: true,
+    value: "9",
+    label: "African Markets",
+    description:
+      "Direct operating experience across South Africa, Kenya, Nigeria, Uganda, Tanzania, Zimbabwe, Zambia, Mauritius, and Botswana.",
   },
   {
-    value: "94%",
-    label: "Employer Satisfaction",
-    trend: "across 220 hiring partners",
-    trendUp: true,
+    value: "0.6% → 1.75%",
+    label: "Conversion Rate",
+    description:
+      "Lead-to-enrollment conversion nearly tripled through structured sales process and CRM implementation.",
   },
 ];
 
@@ -201,16 +201,52 @@ export default function EducationPage() {
               </p>
             </motion.div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {CAPABILITIES.map((c, i) => (
-              <CapabilityCard
-                key={c.title}
-                icon={c.icon}
-                title={c.title}
-                description={c.description}
-                delay={i * 0.07}
-              />
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {CAPABILITIES.map((c, i) => {
+              const Icon = c.icon;
+              return (
+                <motion.div
+                  key={c.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.07, ease: [0.16, 1, 0.3, 1] }}
+                  whileHover={{ y: -6 }}
+                  className="group relative rounded-[26px] bg-white shadow-card-soft hover:shadow-elevated transition-shadow duration-300"
+                >
+                  {/* Static border — visible at rest */}
+                  <div className="absolute inset-0 rounded-[26px] border border-light-gray group-hover:opacity-0 transition-opacity duration-500 pointer-events-none" />
+
+                  {/* Animated gradient border — fades in on hover */}
+                  <div className="animated-gradient-border absolute inset-0 rounded-[26px] p-[1.5px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                    <div className="w-full h-full rounded-[24.5px] bg-white" />
+                  </div>
+
+                  <div className="relative p-7 rounded-[26px] overflow-hidden h-full">
+                    {/* Ambient glow on hover */}
+                    <div className="absolute -top-20 -left-20 w-48 h-48 rounded-full bg-primary-brand/0 group-hover:bg-primary-brand/10 blur-3xl transition-all duration-500 pointer-events-none" />
+
+                    <div className="relative">
+                      <div
+                        className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 shadow-sm"
+                        style={{ background: "linear-gradient(135deg, #6D28D9, #A78BFA)" }}
+                      >
+                        <Icon className="w-5 h-5" style={{ color: "#FFFFFF" }} />
+                      </div>
+                      <h3 className="font-display text-base font-semibold mb-2" style={{ color: "#111827" }}>
+                        {c.title}
+                      </h3>
+                      <p className="text-sm leading-relaxed" style={{ color: "#4B5563" }}>
+                        {c.description}
+                      </p>
+                    </div>
+
+                    {/* Bottom accent line */}
+                    <div className="absolute bottom-0 left-7 right-7 h-px bg-gradient-to-r from-transparent via-accent-purple/0 to-transparent group-hover:via-accent-purple/60 transition-all duration-500" />
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -225,32 +261,53 @@ export default function EducationPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <div className="chip mb-4 inline-flex">Outcomes Snapshot</div>
+              <div className="chip mb-4 inline-flex">Track Record</div>
               <h2 className="font-display text-4xl md:text-[44px] font-bold text-navy tracking-tight leading-[1.1] mb-4">
-                Results That Speak
+                What Our Founding Team Built
               </h2>
               <p className="text-ink-muted max-w-xl mx-auto text-lg leading-relaxed">
-                Illustrative metrics from programmes delivered over the last 24 months.
+                Track record from the organisation where most of our team spent years operating together.
               </p>
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {OUTCOME_KPIS.map((kpi) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {OUTCOME_KPIS.map((kpi, i) => (
               <motion.div
                 key={kpi.label}
-                whileHover={{ y: -4 }}
-                style={{ opacity: 1 }}
-                className="rounded-2xl p-6 bg-white border border-light-gray backdrop-blur-sm"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
+                whileHover={{ y: -6 }}
+                className="group relative rounded-[26px] bg-white shadow-card-soft hover:shadow-elevated transition-shadow duration-300"
               >
-                <div className="font-display text-3xl md:text-4xl font-bold mb-1" style={{ color: "#6D28D9" }}>
-                  {kpi.value}
+                {/* Static border — visible at rest */}
+                <div className="absolute inset-0 rounded-[26px] border border-light-gray group-hover:opacity-0 transition-opacity duration-500 pointer-events-none" />
+
+                {/* Animated gradient border — fades in on hover */}
+                <div className="animated-gradient-border absolute inset-0 rounded-[26px] p-[1.5px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                  <div className="w-full h-full rounded-[24.5px] bg-white" />
                 </div>
-                <div className="text-xs uppercase tracking-widest font-medium mb-2" style={{ color: "#4B5563" }}>
-                  {kpi.label}
-                </div>
-                <div className={`text-xs font-medium flex items-center gap-1 ${kpi.trendUp ? "text-success" : "text-amber"}`}>
-                  {kpi.trendUp ? "↑" : "↓"} {kpi.trend}
+
+                <div className="relative p-7 rounded-[26px] overflow-hidden h-full">
+                  {/* Ambient glow on hover */}
+                  <div className="absolute -top-20 -left-20 w-48 h-48 rounded-full bg-primary-brand/0 group-hover:bg-primary-brand/10 blur-3xl transition-all duration-500 pointer-events-none" />
+
+                  <div className="relative">
+                    <div className="gradient-text font-display text-3xl md:text-4xl font-bold mb-1">
+                      {kpi.value}
+                    </div>
+                    <div className="text-xs uppercase tracking-widest font-semibold mb-3" style={{ color: "#6D28D9" }}>
+                      {kpi.label}
+                    </div>
+                    <p className="text-xs leading-relaxed" style={{ color: "#6B7280" }}>
+                      {kpi.description}
+                    </p>
+                  </div>
+
+                  {/* Bottom accent line */}
+                  <div className="absolute bottom-0 left-7 right-7 h-px bg-gradient-to-r from-transparent via-accent-purple/0 to-transparent group-hover:via-accent-purple/60 transition-all duration-500" />
                 </div>
               </motion.div>
             ))}
