@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Landmark, GraduationCap, Building2, HeartHandshake, Shield, Infinity as InfinityIcon, Compass, MessageCircle, Handshake, Plug, TrendingUp, ArrowUpRight } from "lucide-react";
@@ -180,7 +181,7 @@ export function PartnersPageClient() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
               { icon: Shield, title: "Unparalleled Trust", description: "Long-tenured relationships with regulators, ministries and operators across the continent." },
-              { icon: InfinityIcon, title: "Infinite Scale", description: "Three integrated verticals mean every partnership compounds across the ecosystem." },
+              { icon: InfinityIcon, title: "Infinite Scale", description: "Five integrated verticals mean every partnership compounds across the ecosystem." },
               { icon: Compass, title: "Regional Expertise", description: "Local teams, local context, global standards — wherever you choose to operate." },
             ].map((w, i) => (
               <motion.div
@@ -283,32 +284,8 @@ export function PartnersPageClient() {
               className="lg:col-span-7"
             >
               <div style={{ background: "#ffffff", border: "1px solid rgba(109,40,217,0.08)", borderRadius: "1.5rem", padding: "2rem" }}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                  <div>
-                    <label style={{ fontSize: "12px", fontWeight: 500, color: "#6B7280", display: "block", marginBottom: "6px" }}>Organisation</label>
-                    <input type="text" placeholder="Your organisation" style={{ width: "100%", padding: "10px 14px", borderRadius: "10px", border: "1px solid #E5E7EB", fontSize: "14px", outline: "none" }} />
-                  </div>
-                  <div>
-                    <label style={{ fontSize: "12px", fontWeight: 500, color: "#6B7280", display: "block", marginBottom: "6px" }}>Sector</label>
-                    <select style={{ width: "100%", padding: "10px 14px", borderRadius: "10px", border: "1px solid #E5E7EB", fontSize: "14px", outline: "none", background: "#fff" }}>
-                      <option>Government</option>
-                      <option>University</option>
-                      <option>Corporate</option>
-                      <option>NGO</option>
-                    </select>
-                  </div>
-                </div>
-                <div className="mb-4">
-                  <label style={{ fontSize: "12px", fontWeight: 500, color: "#6B7280", display: "block", marginBottom: "6px" }}>Work email</label>
-                  <input type="email" placeholder="name@organisation.com" style={{ width: "100%", padding: "10px 14px", borderRadius: "10px", border: "1px solid #E5E7EB", fontSize: "14px", outline: "none" }} />
-                </div>
-                <div className="mb-6">
-                  <label style={{ fontSize: "12px", fontWeight: 500, color: "#6B7280", display: "block", marginBottom: "6px" }}>Tell us about the partnership you have in mind</label>
-                  <textarea rows={4} placeholder="A short paragraph is enough — we'll take it from there." style={{ width: "100%", padding: "10px 14px", borderRadius: "10px", border: "1px solid #E5E7EB", fontSize: "14px", outline: "none", resize: "none" }} />
-                </div>
-                <button type="button" style={{ background: "#6D28D9", color: "#ffffff", padding: "12px 28px", borderRadius: "50px", fontSize: "14px", fontWeight: 600, border: "none", cursor: "pointer" }}>
-                  Submit Inquiry
-                </button>
+                {/* Partner form state + submit */}
+                <PartnerForm />
               </div>
             </motion.div>
           </div>
@@ -341,4 +318,67 @@ export function PartnersPageClient() {
 
     </main>
   );
+}
+
+function PartnerForm() {
+  const [formData, setFormData] = useState({ organisation: '', sector: 'Government', workEmail: '', message: '' })
+  const [submitting, setSubmitting] = useState(false)
+  const [submitted, setSubmitted] = useState(false)
+  const [error, setError] = useState('')
+
+  const handleSubmit = async () => {
+    setSubmitting(true)
+    setError('')
+    try {
+      const res = await fetch('/api/partner', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+      if (res.ok) setSubmitted(true)
+      else {
+        const data = await res.json()
+        setError(data?.error || 'Submission failed')
+      }
+    } catch (err: any) {
+      setError(err.message || 'Submission failed')
+    }
+    setSubmitting(false)
+  }
+
+  if (submitted) {
+    return <div className="p-6 rounded-xl bg-emerald-50 border border-emerald-100 text-emerald-800">Thanks — your inquiry has been received. We will respond shortly.</div>
+  }
+
+  return (
+    <div>
+      {error && <div className="mb-4 p-3 rounded bg-red-50 border border-red-100 text-red-700">{error}</div>}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+        <div>
+          <label style={{ fontSize: "12px", fontWeight: 500, color: "#6B7280", display: "block", marginBottom: "6px" }}>Organisation</label>
+          <input value={formData.organisation} onChange={e => setFormData({ ...formData, organisation: e.target.value })} type="text" placeholder="Your organisation" style={{ width: "100%", padding: "10px 14px", borderRadius: "10px", border: "1px solid #E5E7EB", fontSize: "14px", outline: "none" }} />
+        </div>
+        <div>
+          <label style={{ fontSize: "12px", fontWeight: 500, color: "#6B7280", display: "block", marginBottom: "6px" }}>Sector</label>
+          <select value={formData.sector} onChange={e => setFormData({ ...formData, sector: e.target.value })} style={{ width: "100%", padding: "10px 14px", borderRadius: "10px", border: "1px solid #E5E7EB", fontSize: "14px", outline: "none", background: "#fff" }}>
+            <option>Government</option>
+            <option>University</option>
+            <option>Corporate</option>
+            <option>NGO</option>
+          </select>
+        </div>
+      </div>
+      <div className="mb-4">
+        <label style={{ fontSize: "12px", fontWeight: 500, color: "#6B7280", display: "block", marginBottom: "6px" }}>Work email</label>
+        <input value={formData.workEmail} onChange={e => setFormData({ ...formData, workEmail: e.target.value })} type="email" placeholder="name@organisation.com" style={{ width: "100%", padding: "10px 14px", borderRadius: "10px", border: "1px solid #E5E7EB", fontSize: "14px", outline: "none" }} />
+      </div>
+      <div className="mb-6">
+        <label style={{ fontSize: "12px", fontWeight: 500, color: "#6B7280", display: "block", marginBottom: "6px" }}>Tell us about the partnership you have in mind</label>
+        <textarea value={formData.message} onChange={e => setFormData({ ...formData, message: e.target.value })} rows={4} placeholder="A short paragraph is enough — we'll take it from there." style={{ width: "100%", padding: "10px 14px", borderRadius: "10px", border: "1px solid #E5E7EB", fontSize: "14px", outline: "none", resize: "none" }} />
+      </div>
+      <button onClick={handleSubmit} type="button" disabled={submitting} style={{ background: "#6D28D9", color: "#ffffff", padding: "12px 28px", borderRadius: "50px", fontSize: "14px", fontWeight: 600, border: "none", cursor: "pointer" }}>
+        {submitting ? 'Submitting…' : 'Submit Inquiry'}
+      </button>
+    </div>
+  )
 }

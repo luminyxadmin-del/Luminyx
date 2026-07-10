@@ -14,6 +14,7 @@ import {
   Plug,
   GraduationCap,
   Plane,
+  Cpu,
   X,
   Check,
   ChevronRight,
@@ -28,6 +29,14 @@ const STATS = [
   { value: "$2B+", label: "Workforce investment" },
   { value: "1,000+", label: "Partner institutions" },
   { value: "35+", label: "Enterprise clients" },
+];
+
+const MARQUEE_ITEMS = [
+  { dot: "#A78BFA", label: "AI Advisory", meta: "Strategy & institutional intelligence" },
+  { dot: "#60A5FA", label: "Education Advisory", meta: "Connecting institutions to outcomes" },
+  { dot: "#34D399", label: "Talent", meta: "3M+ profiles · 28 countries" },
+  { dot: "#F59E0B", label: "Travel", meta: "UAE · GCC · Africa corridors" },
+  { dot: "#F472B6", label: "Technology", meta: "AI platform powering all divisions" },
 ];
 
 const CORRIDORS = [
@@ -116,9 +125,9 @@ export default function HomePage() {
               </h1>
 
               <p className="mt-5 text-white/75 text-lg leading-relaxed max-w-lg mb-10">
-                Luminyx Group unifies education, talent, and mobility into a
-                single intelligence infrastructure — purpose-built for
-                Africa, India, and the GCC corridor.
+                Luminyx Group unifies advisory, education, talent, travel, and
+                technology into a single intelligence infrastructure —
+                purpose-built for Africa, India, and the GCC corridor.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-14">
@@ -191,7 +200,7 @@ export default function HomePage() {
                 <div className="mt-6 pt-5 border-t border-light-gray">
                   <div className="text-xs text-ink-faint mb-3 uppercase tracking-widest">Live intelligence</div>
                   <div className="flex flex-wrap gap-2">
-                    {["Education", "Talent", "Mobility"].map((d) => (
+                    {["AI Advisory", "Education Advisory", "Talent", "Travel", "Technology"].map((d) => (
                       <span
                         key={d}
                         className="px-3 py-1 rounded-full text-xs font-medium bg-primary-brand/10 text-accent-purple border border-primary-brand/20"
@@ -204,6 +213,19 @@ export default function HomePage() {
               </div>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* ─── FIVE VERTICALS MARQUEE ──────────────────────────────────────────── */}
+      <section className="py-4 border-y border-light-gray bg-bg-subtle overflow-hidden">
+        <div className="flex w-max" style={{ animation: "marqueeScroll 32s linear infinite" }}>
+          {[...MARQUEE_ITEMS, ...MARQUEE_ITEMS].map((item, i) => (
+            <div key={i} className="flex items-center gap-2.5 px-8 shrink-0">
+              <div className="w-2 h-2 rounded-full shrink-0" style={{ background: item.dot }} />
+              <span className="text-sm font-semibold text-navy whitespace-nowrap">{item.label}</span>
+              <span className="text-xs text-ink-faint whitespace-nowrap">{item.meta}</span>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -262,7 +284,7 @@ export default function HomePage() {
                 <span style={{ color: "#6D28D9" }}>Execution Gaps</span>
               </h2>
               <p className="mt-4 leading-relaxed" style={{ color: "#4B5563" }}>
-                Across Talent, Education, and Mobility, organizations face fragmented
+                Across Advisory, Education, Talent, Travel, and Technology, organizations face fragmented
                 systems and disconnected partners. This leads to inefficiencies,
                 inconsistent experiences, and missed opportunities across borders.
               </p>
@@ -304,7 +326,7 @@ export default function HomePage() {
                 },
                 {
                   icon: Plane,
-                  label: "Mobility",
+                  label: "Travel",
                   rows: [
                     { problem: "Disconnected mobility providers and service layers", solution: "Unified mobility ecosystem across regions" },
                     { problem: "Inconsistent traveler and logistics experience", solution: "Seamless and consistent end-to-end experiences" },
@@ -446,7 +468,7 @@ export default function HomePage() {
               </div>
 
               <h3 className="font-display text-2xl font-bold text-white mb-8">
-                Three divisions.<br />
+                Five divisions.<br />
                 <span className="text-accent-purple">One operating intelligence.</span>
               </h3>
 
@@ -508,20 +530,20 @@ export default function HomePage() {
 
               <h2 className="font-display text-4xl md:text-5xl font-bold text-ink leading-tight">
                 One Platform.{" "}
-                <span className="text-primary-brand">Three Divisions.</span>{" "}
+                <span className="text-primary-brand">Five Divisions.</span>{" "}
                 Zero Gaps.
               </h2>
 
               <p className="mt-6 text-ink-muted leading-relaxed text-lg">
-                The Luminyx Platform is the connective tissue between our three divisions.
+                The Luminyx Platform is the connective tissue between our five divisions.
                 It aggregates data, surfaces insights, automates workflows, and ensures
                 every engagement benefits from the full weight of our cross-divisional intelligence.
               </p>
 
               <p className="mt-4 text-ink-muted leading-relaxed">
                 Unlike point solutions, the platform grows more powerful with each engagement.
-                Talent data informs education design. Mobility intelligence keeps every
-                engagement grounded in real market movement.
+                Advisory intelligence shapes education design. Talent data informs travel
+                logistics. Technology keeps every engagement grounded in real market movement.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
@@ -552,7 +574,7 @@ export default function HomePage() {
       {/* ─── HOW ENGAGEMENTS UNFOLD ────────────────────────────────────────── */}
       <EngagementTimeline />
 
-      {/* ─── THREE DIVISIONS ───────────────────────────────────────────────── */}
+      {/* ─── FIVE DIVISIONS ─────────────────────────────────────────────────── */}
       <DivisionsShowcase />
 
       {/* ─── AFRICA FOCUS ─────────────────────────────────────────────────── */}
@@ -698,7 +720,7 @@ export default function HomePage() {
               <p className="text-white/70 text-lg max-w-xl mx-auto mb-10 leading-relaxed">
                 Start with a complimentary 90-minute diagnostic call. No
                 commitment required. We will map your current state and identify
-                the highest-leverage opportunities across all three divisions.
+                the highest-leverage opportunities across all five divisions.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-primary-dark font-semibold hover:scale-105 transition-transform shadow-elevated">

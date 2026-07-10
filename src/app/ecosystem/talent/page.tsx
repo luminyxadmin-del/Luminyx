@@ -237,10 +237,8 @@ export default function TalentPage() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              whileHover={{ y: -4 }}
+              style={{ opacity: 1 }}
               className="rounded-2xl p-7 bg-white border border-light-gray"
             >
               <div className="text-xs font-mono text-primary-brand font-bold tracking-widest mb-5 uppercase">
@@ -248,7 +246,7 @@ export default function TalentPage() {
               </div>
               <ul className="space-y-3">
                 {CHECKLIST.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-slate leading-snug">
+                  <li key={item} className="flex items-start gap-3 text-sm leading-snug" style={{ color: "#4B5563" }}>
                     <CheckCircle2 className="w-4 h-4 text-primary-brand/70 mt-0.5 shrink-0" />
                     {item}
                   </li>
@@ -404,47 +402,41 @@ export default function TalentPage() {
         </div>
       </section>
 
-      {/* VERIDIAN PARTNERS */}
-      <section className="py-section-lg bg-bg-subtle">
-        <div className="container-xl">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="relative rounded-2xl p-10 bg-white border border-light-gray overflow-hidden"
-          >
-            <div className="absolute -top-20 -right-20 w-64 h-64 bg-primary-brand/[0.06] blur-3xl rounded-full pointer-events-none" />
-            <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div>
-                <div className="text-xs font-mono text-primary-brand font-bold tracking-widest mb-4 uppercase">
-                  Backed by Legacy
-                </div>
-                <h3 className="font-display text-2xl font-bold text-navy mb-4">
-                  18 Years of Executive Search
-                </h3>
-                <p className="text-slate leading-relaxed mb-4">
-                  Luminyx Talent is built on the foundation of Veridian Partners,
-                  established in 2006 as a boutique executive search firm
-                  specialising in MENA and East Africa senior placements.
-                </p>
-                <p className="text-ink-muted leading-relaxed">
-                  The legacy of 850+ successful senior placements, deep
-                  employer relationships, and sector intelligence built over 18
-                  years underpins every brief we take on today.
-                </p>
+      {/* VERIDIAN PARTNERS — dark trust section */}
+      <section className="py-section-lg relative overflow-hidden bg-primary-dark">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-dark via-primary-dark to-primary-brand/20 pointer-events-none" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-accent-purple/10 blur-[100px] rounded-full pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary-brand/20 blur-[80px] rounded-full pointer-events-none" />
+        <div className="container-xl relative">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div>
+              <div className="text-xs font-mono text-accent-purple font-bold tracking-widest mb-4 uppercase">
+                Backed by Legacy
               </div>
-              <div className="rounded-xl p-6 bg-white border border-light-gray">
-                <blockquote className="italic text-slate text-base leading-relaxed mb-4">
-                  &ldquo;The best search firms don&apos;t fill roles — they change
-                  the trajectory of organisations by placing the right leaders
-                  at the right inflection points.&rdquo;
-                </blockquote>
-                <div className="text-sm font-semibold text-navy">Veridian Partners</div>
-                <div className="text-xs text-ink-faint">Est. 2006 · MENA & East Africa</div>
-              </div>
+              <h3 className="font-display text-2xl md:text-3xl font-bold text-white mb-4">
+                18 Years of Executive Search
+              </h3>
+              <p className="text-white/70 leading-relaxed mb-4">
+                Luminyx Talent is built on the foundation of Veridian Partners,
+                established in 2006 as a boutique executive search firm
+                specialising in MENA and East Africa senior placements.
+              </p>
+              <p className="text-white/60 leading-relaxed">
+                The legacy of 850+ successful senior placements, deep
+                employer relationships, and sector intelligence built over 18
+                years underpins every brief we take on today.
+              </p>
             </div>
-          </motion.div>
+            <div className="rounded-2xl p-6 bg-white/5 border border-white/10 backdrop-blur-sm">
+              <blockquote className="italic text-white/90 text-base leading-relaxed mb-4">
+                &ldquo;The best search firms don&apos;t fill roles — they change
+                the trajectory of organisations by placing the right leaders
+                at the right inflection points.&rdquo;
+              </blockquote>
+              <div className="text-sm font-semibold text-white">Veridian Partners</div>
+              <div className="text-xs text-white/50">Est. 2006 · MENA & East Africa</div>
+            </div>
+          </div>
         </div>
       </section>
 

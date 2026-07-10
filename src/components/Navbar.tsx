@@ -13,28 +13,17 @@ import {
   GraduationCap,
   Users,
   Plane,
+  BrainCircuit,
+  Cpu,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const ecosystemLinks = [
-  {
-    label: "Education",
-    href: "/ecosystem/education",
-    icon: GraduationCap,
-    description: "Transforming institutions into employment engines",
-  },
-  {
-    label: "Talent",
-    href: "/ecosystem/talent",
-    icon: Users,
-    description: "Precision placement for high-stakes roles",
-  },
-  {
-    label: "Mobility",
-    href: "/ecosystem/mobility",
-    icon: Plane,
-    description: "End-to-end cross-border movement infrastructure",
-  },
+  { label: "AI Advisory", description: "Strategy & institutional intelligence", href: "/ecosystem/advisory", icon: BrainCircuit },
+  { label: "Education Advisory", description: "Connecting institutions to employment", href: "/ecosystem/education", icon: GraduationCap },
+  { label: "Talent", description: "Precision hiring for growth markets", href: "/ecosystem/talent", icon: Users },
+  { label: "Travel", description: "UAE · GCC · Africa travel corridors", href: "/ecosystem/travel", icon: Plane },
+  { label: "Technology", description: "AI platform powering all divisions", href: "/ecosystem/technology", icon: Cpu },
 ];
 
 const TOP_LINKS = [

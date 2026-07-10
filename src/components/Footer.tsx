@@ -3,9 +3,11 @@ import Image from "next/image";
 import { Twitter, Linkedin, Github } from "lucide-react";
 
 const DIVISION_LINKS = [
-  { label: "Education", href: "/ecosystem/education" },
+  { label: "AI Advisory", href: "/ecosystem/advisory" },
+  { label: "Education Advisory", href: "/ecosystem/education" },
   { label: "Talent", href: "/ecosystem/talent" },
-  { label: "Mobility", href: "/ecosystem/mobility" },
+  { label: "Travel", href: "/ecosystem/travel" },
+  { label: "Technology", href: "/ecosystem/technology" },
 ];
 
 const COMPANY_LINKS = [
@@ -76,7 +78,7 @@ export function Footer() {
             </Link>
             <p className="max-w-sm mb-8 leading-relaxed text-sm" style={{ color: "#374151" }}>
               An intelligence infrastructure firm connecting emerging markets
-              through education, talent, and mobility.
+              through advisory, education, talent, travel, and technology.
               Headquartered in Dubai, UAE.
             </p>
             <div className="flex items-center gap-3">

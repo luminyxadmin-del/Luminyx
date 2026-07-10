@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight, Globe, Users, BookOpen, Plane, Target, Heart, Zap, Shield } from "lucide-react";
+import { ArrowUpRight, Globe, Users, BookOpen, Plane, Target, Heart, Zap, Shield, BrainCircuit, Cpu } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About — Luminyx Group",
-  description: "We are an African-native intelligence infrastructure built to connect talent, education, and mobility across emerging markets.",
+  description: "We are an African-native intelligence infrastructure built to connect advisory, education, talent, travel, and technology across emerging markets.",
 };
 
 export default function AboutPage() {
@@ -28,7 +28,7 @@ export default function AboutPage() {
                 <span className="text-accent-purple">Africa Was Missing.</span>
               </h1>
               <p className="mt-6 text-white/60 text-lg leading-relaxed max-w-xl">
-                Luminyx Group is an intelligence infrastructure firm connecting emerging markets through AI, education, talent, and mobility — headquartered in Dubai, with operations across 14 countries.
+                Luminyx Group is an intelligence infrastructure firm connecting emerging markets through advisory, education, talent, travel, and technology — headquartered in Dubai, with operations across 14 countries.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-primary-dark font-semibold hover:scale-105 transition-transform">
@@ -43,7 +43,7 @@ export default function AboutPage() {
               {[
                 { value: "2019", label: "Founded" },
                 { value: "14", label: "Countries" },
-                { value: "3", label: "Divisions" },
+                { value: "5", label: "Divisions" },
                 { value: "Dubai", label: "Headquarters" },
               ].map((s) => (
                 <div key={s.label} className="rounded-2xl p-5 bg-white/5 border border-white/10">
@@ -139,7 +139,7 @@ export default function AboutPage() {
               </div>
               <h3 className="font-display text-2xl font-bold text-white mb-4">Our Mission</h3>
               <p className="text-white/70 leading-relaxed">
-                To build the intelligence infrastructure that connects talent, education, and mobility across emerging markets — making opportunity accessible, measurable, and compounding.
+                To build the intelligence infrastructure that connects advisory, education, talent, travel, and technology across emerging markets — making opportunity accessible, measurable, and compounding.
               </p>
             </div>
             <div className="rounded-3xl p-10 bg-white border border-primary-brand/10 shadow-sm">
@@ -187,20 +187,22 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* THREE DIVISIONS */}
+      {/* FIVE DIVISIONS */}
       <section className="py-16 bg-bg-subtle">
         <div className="container-xl">
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-ink">
-              Three Divisions. <span className="text-primary-brand">One Infrastructure.</span>
+              Five Divisions. <span className="text-primary-brand">One Infrastructure.</span>
             </h2>
             <p className="mt-3 text-ink-muted max-w-xl mx-auto">Each division is independently powerful. Together, they create capabilities no single-service firm can offer.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
             {[
-              { icon: BookOpen, name: "Education", description: "Connecting institutions to employment outcomes across Africa, India, and the Middle East.", href: "/ecosystem/education" },
-              { icon: Users, name: "Talent", description: "AI-powered recruitment and talent advisory for the world's fastest-growing markets.", href: "/ecosystem/talent" },
-              { icon: Plane, name: "Mobility", description: "End-to-end infrastructure for cross-border talent movement — visa, relocation, integration.", href: "/ecosystem/mobility" },
+              { icon: BrainCircuit, name: "AI Advisory", description: "Strategic intelligence for institutions and enterprises.", href: "/ecosystem/advisory" },
+              { icon: BookOpen, name: "Education Advisory", description: "Connecting institutions to employment outcomes.", href: "/ecosystem/education" },
+              { icon: Users, name: "Talent", description: "AI-powered recruitment for growth markets.", href: "/ecosystem/talent" },
+              { icon: Plane, name: "Travel", description: "End-to-end cross-border travel infrastructure.", href: "/ecosystem/travel" },
+              { icon: Cpu, name: "Technology", description: "The intelligence layer powering every division.", href: "/ecosystem/technology" },
             ].map((d) => (
               <Link key={d.name} href={d.href}
                 className="group rounded-3xl p-8 bg-white border border-primary-brand/10 shadow-sm hover:shadow-elevated hover:-translate-y-1 transition-all"

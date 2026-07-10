@@ -4,9 +4,11 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
+  BrainCircuit,
   GraduationCap,
   Users,
   Plane,
+  Cpu,
   ArrowUpRight,
   Check,
 } from "lucide-react";
@@ -27,11 +29,26 @@ interface Division {
 const DIVISIONS: Division[] = [
   {
     number: "01",
-    icon: GraduationCap,
-    name: "Education",
-    tagline: "Connecting academic supply to real employer demand",
+    icon: BrainCircuit,
+    name: "AI Advisory",
+    tagline: "Strategy & institutional intelligence",
     description:
-      "Luminyx Education maps the full journey from institutional programme design to graduate employment — using AI to align curricula with live market requirements across Africa and India.",
+      "We advise governments, development finance institutions, and large enterprises on workforce strategy, policy frameworks, and AI-led transformation across emerging markets.",
+    capabilities: [
+      "Workforce strategy & policy design",
+      "Institutional transformation",
+      "Innovation ecosystem design",
+    ],
+    stat: { value: "18", label: "Government engagements" },
+    href: "/ecosystem/advisory",
+  },
+  {
+    number: "02",
+    icon: GraduationCap,
+    name: "Education Advisory",
+    tagline: "Connecting institutions to employment",
+    description:
+      "Luminyx Education Advisory maps the full journey from institutional programme design to graduate employment — using AI to align curricula with live market requirements across Africa and India.",
     capabilities: [
       "Institutional partnership & audit",
       "AI-powered pathway mapping",
@@ -41,7 +58,7 @@ const DIVISIONS: Division[] = [
     href: "/ecosystem/education",
   },
   {
-    number: "02",
+    number: "03",
     icon: Users,
     name: "Talent",
     tagline: "Precision hiring for growth-market organisations",
@@ -56,19 +73,34 @@ const DIVISIONS: Division[] = [
     href: "/ecosystem/talent",
   },
   {
-    number: "03",
+    number: "04",
     icon: Plane,
-    name: "Mobility",
-    tagline: "End-to-end infrastructure for cross-border talent movement",
+    name: "Travel",
+    tagline: "UAE · GCC · Africa corridors",
     description:
-      "From visa processing and credential verification to relocation support and employer facilitation — Luminyx Mobility makes international talent movement predictable, compliant, and fast.",
+      "From visa processing and credential verification to relocation support and employer facilitation — Luminyx Travel makes international talent movement predictable, compliant, and fast.",
     capabilities: [
       "Visa & compliance management",
       "Credential verification",
       "Relocation & integration support",
     ],
     stat: { value: "40+", label: "Destination countries" },
-    href: "/ecosystem/mobility",
+    href: "/ecosystem/travel",
+  },
+  {
+    number: "05",
+    icon: Cpu,
+    name: "Technology",
+    tagline: "AI platform powering all divisions",
+    description:
+      "A unified AI platform that aggregates data across all divisions — surfacing insights, automating workflows, and ensuring every engagement benefits from the full weight of cross-divisional intelligence.",
+    capabilities: [
+      "AI-driven matching & routing",
+      "Workforce analytics & forecasting",
+      "Education-to-employment mapping",
+    ],
+    stat: { value: "3M+", label: "Profiles indexed" },
+    href: "/ecosystem/technology",
   },
 ];
 
@@ -228,7 +260,7 @@ export function DivisionsShowcase() {
           >
             <div className="chip mb-5 inline-flex">Our Divisions</div>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-navy tracking-tight leading-[1.1] mb-4">
-              Three Divisions.{" "}
+              Five Divisions.{" "}
               <span className="gradient-text">One Infrastructure.</span>
             </h2>
             <p className="text-slate max-w-lg mx-auto">

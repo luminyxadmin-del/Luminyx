@@ -4,8 +4,10 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   Users,
-  Car,
+  Plane,
   GraduationCap,
+  BrainCircuit,
+  Cpu,
   ArrowUpRight,
   Sparkles,
 } from "lucide-react";
@@ -14,31 +16,49 @@ import { CTASection } from "@/components/CTASection";
 
 const VERTICALS = [
   {
+    href: "/ecosystem/advisory",
+    icon: BrainCircuit,
+    title: "AI Advisory",
+    subtitle: "Strategy & Institutional Intelligence",
+    desc: "Advising governments, development finance institutions, and enterprises on workforce strategy and AI-led transformation.",
+    accent: "bg-gradient-to-br from-primary-brand to-accent-purple",
+    stat: { value: "18", label: "Govt Engagements" },
+  },
+  {
+    href: "/ecosystem/education",
+    icon: GraduationCap,
+    title: "Education Advisory",
+    subtitle: "Empowering the Future",
+    desc: "AI-driven curriculums, scholarships, and digital-first learning ecosystems for the next generation of leaders.",
+    accent: "bg-gradient-to-br from-emerald-500 to-teal-500",
+    stat: { value: "1,000+", label: "Partner Institutions" },
+  },
+  {
     href: "/ecosystem/talent",
     icon: Users,
     title: "Talent",
     subtitle: "Connecting Opportunity",
     desc: "Bridging East African professionals with the world's leading enterprises through AI-driven matching.",
-    accent: "bg-gradient-to-br from-primary-brand to-accent-purple",
+    accent: "bg-gradient-to-br from-violet-500 to-purple-500",
     stat: { value: "25K+", label: "Vetted Talent" },
   },
   {
-    href: "/ecosystem/mobility",
-    icon: Car,
-    title: "Mobility",
+    href: "/ecosystem/travel",
+    icon: Plane,
+    title: "Travel",
     subtitle: "Explore East Africa",
     desc: "Premium travel and mobility solutions curated for those who demand excellence and luxury experience.",
     accent: "bg-gradient-to-br from-amber-500 to-orange-500",
     stat: { value: "24/7", label: "Concierge" },
   },
   {
-    href: "/ecosystem/education",
-    icon: GraduationCap,
-    title: "Education",
-    subtitle: "Empowering the Future",
-    desc: "AI-driven curriculums, scholarships, and digital-first learning ecosystems for the next generation of leaders.",
-    accent: "bg-gradient-to-br from-emerald-500 to-teal-500",
-    stat: { value: "15K+", label: "Active Scholars" },
+    href: "/ecosystem/technology",
+    icon: Cpu,
+    title: "Technology",
+    subtitle: "AI-Powered Enterprise Solutions",
+    desc: "The intelligence platform powering every division — AI-driven matching, analytics, and cross-divisional data.",
+    accent: "bg-gradient-primary-brand",
+    stat: { value: "94%", label: "Placement Rate" },
   },
 ];
 
@@ -62,7 +82,7 @@ export default function EcosystemPage() {
               The Luminyx Ecosystem
             </div>
             <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] text-navy text-balance">
-              Three verticals.{" "}
+              Five verticals.{" "}
               <span className="gradient-text">One integrated platform.</span>
             </h1>
             <p className="mt-6 text-lg md:text-xl text-slate max-w-2xl mx-auto leading-relaxed">

@@ -73,32 +73,32 @@ const INFRASTRUCTURE = [
 
 const ROUTES = [
   {
-    name: "East Africa â†’ UAE",
+    name: "East Africa → UAE",
     status: "Active" as const,
     note: "High-volume professional corridor, all visa types supported",
   },
   {
-    name: "India â†’ GCC",
+    name: "India → GCC",
     status: "Active" as const,
     note: "Engineering, finance and healthcare dominant flow",
   },
   {
-    name: "UK â†’ East Africa",
+    name: "UK → East Africa",
     status: "Active" as const,
     note: "Senior management and development sector placements",
   },
   {
-    name: "North Africa â†’ Europe",
+    name: "North Africa → Europe",
     status: "Active" as const,
     note: "Skilled trades, engineering and IT professionals",
   },
   {
-    name: "West Africa â†’ UAE",
+    name: "West Africa → UAE",
     status: "Launching" as const,
     note: "Growing corridor, select visa categories supported",
   },
   {
-    name: "India â†’ UK",
+    name: "India → UK",
     status: "Launching" as const,
     note: "Pending bilateral agreement, pre-registration open",
   },
@@ -148,7 +148,7 @@ const TRAVEL_PORTFOLIO = [
     icon: Globe,
     title: "Institutional Delegation Planning",
     description:
-      "End-to-end coordination for government and university delegations â€” logistics, protocol support, and documentation.",
+      "End-to-end coordination for government and university delegations — logistics, protocol support, and documentation.",
   },
   {
     icon: MapPin,
@@ -176,7 +176,7 @@ const TRAVEL_PORTFOLIO = [
   },
 ];
 
-export default function MobilityPage() {
+export default function TravelPage() {
   return (
     <div>
       {/* DARK HERO */}
@@ -187,12 +187,12 @@ export default function MobilityPage() {
 
         <div className="relative container-xl">
           <div className="text-xs text-white/30 mb-6">
-            Luminyx Group / <span className="text-white/50">Ecosystem</span> / <span className="text-accent-purple">Mobility</span>
+            Luminyx Group / <span className="text-white/50">Ecosystem</span> / <span className="text-accent-purple">Travel</span>
           </div>
 
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.08] border border-white/10 mb-6">
             <Plane className="w-3.5 h-3.5 text-accent-purple" />
-            <span className="text-xs font-medium text-white/70 uppercase tracking-wider">MOBILITY</span>
+            <span className="text-xs font-medium text-white/70 uppercase tracking-wider">TRAVEL</span>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -202,11 +202,11 @@ export default function MobilityPage() {
                 <span className="text-accent-purple">Intelligently</span>
               </h1>
               <p className="mt-5 text-white/60 text-lg leading-relaxed max-w-xl">
-                We build the infrastructure that makes cross-border talent movement seamless â€” from opportunity identification to visa processing, relocation, and integration.
+                We build the infrastructure that makes cross-border talent movement seamless — from opportunity identification to visa processing, relocation, and integration.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link href="/contact" className="btn-primary">
-                  Explore Mobility <ArrowUpRight className="w-4 h-4" />
+                  Explore Travel <ArrowUpRight className="w-4 h-4" />
                 </Link>
                 <Link href="/ecosystem" className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 text-white hover:bg-white/[0.08] transition-colors text-sm font-medium">
                   View All Divisions
@@ -246,7 +246,7 @@ export default function MobilityPage() {
                 Six Infrastructure Capabilities
               </h2>
               <p className="text-ink-muted max-w-xl text-lg leading-relaxed">
-                We handle every component of the movement lifecycle â€” nothing falls
+                We handle every component of the movement lifecycle — nothing falls
                 through the cracks between service providers.
               </p>
             </motion.div>
@@ -265,35 +265,33 @@ export default function MobilityPage() {
         </div>
       </section>
 
-      {/* â”€â”€â”€ ACTIVE CORRIDORS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ─── ACTIVE CORRIDORS ────────────────────────────────────────────────── */}
       <section className="py-section-lg bg-bg-subtle">
         <div className="container-xl">
           <div className="mb-12">
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <div className="chip mb-4 inline-flex">Corridors</div>
-              <h2 className="font-display text-4xl md:text-[44px] font-bold text-navy tracking-tight leading-[1.1]">
-                Active Corridors
-              </h2>
-            </motion.div>
+            <div className="chip mb-4 inline-flex">Corridors</div>
+            <h2 className="font-display text-4xl md:text-[44px] font-bold tracking-tight leading-[1.1]" style={{ color: "#111827" }}>
+              Active Corridors
+            </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div className="rounded-2xl bg-white border border-light-gray overflow-hidden">
             {ROUTES.map((route, i) => (
               <motion.div
                 key={route.name}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: i * 0.07, ease: [0.16, 1, 0.3, 1] }}
-                className="flex items-center justify-between p-5 rounded-2xl bg-white border border-light-gray"
+                whileHover={{ backgroundColor: "#FAFAFC" }}
+                style={{
+                  opacity: 1,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  gap: "16px",
+                  padding: "20px 24px",
+                  borderBottom: i < ROUTES.length - 1 ? "1px solid #E5E7EB" : "none",
+                }}
               >
                 <div>
-                  <div className="font-display text-sm font-semibold text-navy mb-1">{route.name}</div>
-                  <div className="text-xs text-ink-faint">{route.note}</div>
+                  <div className="font-display text-sm font-semibold mb-1" style={{ color: "#111827" }}>{route.name}</div>
+                  <div className="text-xs" style={{ color: "#6B7280" }}>{route.note}</div>
                 </div>
                 <StatusBadge status={route.status} />
               </motion.div>
@@ -302,45 +300,36 @@ export default function MobilityPage() {
         </div>
       </section>
 
-      {/* â”€â”€â”€ COMPLIANCE & DOCUMENTATION COVERAGE (NEW SECTION) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ─── COMPLIANCE & DOCUMENTATION COVERAGE ─────────────────────────────── */}
       <section className="py-section-lg">
         <div className="container-xl">
           <div className="text-center mb-12">
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <div className="chip mb-4 inline-flex">Coverage</div>
-              <h2 className="font-display text-4xl md:text-[44px] font-bold text-navy tracking-tight leading-[1.1] mb-4">
-                Compliance & Documentation Coverage
-              </h2>
-              <p className="text-ink-muted max-w-xl mx-auto text-lg leading-relaxed">
-                We handle the regulatory complexity so your professionals can focus
-                on impact, not paperwork.
-              </p>
-            </motion.div>
+            <div className="chip mb-4 inline-flex">Coverage</div>
+            <h2 className="font-display text-4xl md:text-[44px] font-bold tracking-tight leading-[1.1] mb-4" style={{ color: "#111827" }}>
+              Compliance & Documentation Coverage
+            </h2>
+            <p className="max-w-xl mx-auto text-lg leading-relaxed" style={{ color: "#4B5563" }}>
+              We handle the regulatory complexity so your professionals can focus
+              on impact, not paperwork.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {COMPLIANCE_TILES.map((tile, i) => {
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {COMPLIANCE_TILES.map((tile) => {
               const Icon = tile.icon;
               return (
                 <motion.div
                   key={tile.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.07, ease: [0.16, 1, 0.3, 1] }}
+                  whileHover={{ y: -4 }}
+                  style={{ opacity: 1, height: "100%" }}
                   className="flex items-start gap-4 p-6 rounded-2xl bg-white border border-light-gray"
                 >
                   <div className="w-10 h-10 rounded-xl bg-primary-brand/10 border border-primary-brand/20 flex items-center justify-center shrink-0">
                     <Icon className="w-4 h-4 text-accent-purple" />
                   </div>
                   <div>
-                    <h3 className="font-display text-sm font-semibold text-navy mb-1.5">{tile.title}</h3>
-                    <p className="text-xs text-ink-muted leading-relaxed">{tile.note}</p>
+                    <h3 className="font-display text-sm font-semibold mb-1.5" style={{ color: "#111827" }}>{tile.title}</h3>
+                    <p className="text-xs leading-relaxed" style={{ color: "#4B5563" }}>{tile.note}</p>
                   </div>
                 </motion.div>
               );
@@ -349,82 +338,65 @@ export default function MobilityPage() {
         </div>
       </section>
 
-      {/* â”€â”€â”€ MERIDIAN JOURNEYS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
-      <section className="py-section-lg relative overflow-hidden bg-bg-tint">
-        <div className="container-xl">
+      {/* ─── MERIDIAN JOURNEYS ────────────────────────────────────────────────── */}
+      <section className="py-section-lg relative overflow-hidden bg-primary-dark">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-dark via-primary-dark to-primary-brand/20 pointer-events-none" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-accent-purple/10 blur-[100px] rounded-full pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-amber/10 blur-[80px] rounded-full pointer-events-none" />
+        <div className="container-xl relative">
           {/* Brand header */}
           <div className="text-center mb-14">
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent-purple/10 border border-accent-purple/20 text-accent-purple text-xs font-bold tracking-widest uppercase mb-5">
-                Travel Sub-Brand
-              </div>
-              <h2 className="font-display text-4xl md:text-5xl font-bold text-navy tracking-tight leading-[1.1] mb-4">
-                Meridian Journeys
-              </h2>
-              <p className="text-slate max-w-xl mx-auto text-lg italic">
-                Premium travel management for Luminyx professionals and their
-                institutions.
-              </p>
-            </motion.div>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber/10 border border-amber/30 text-amber text-xs font-bold tracking-widest uppercase mb-5">
+              Travel Sub-Brand
+            </div>
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-white tracking-tight leading-[1.1] mb-4">
+              Meridian Journeys
+            </h2>
+            <p className="text-white/60 max-w-xl mx-auto text-lg italic">
+              Premium travel management for Luminyx professionals and their
+              institutions.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-14">
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <p className="text-slate text-lg leading-relaxed mb-4">
-                Meridian Journeys is the travel management arm of Luminyx Mobility,
+            <div>
+              <p className="text-white/80 text-lg leading-relaxed mb-4">
+                Meridian Journeys is the travel management arm of Luminyx Travel,
                 providing white-glove corporate travel, institutional delegation
                 logistics, and executive relocation packages for clients across our
                 14 active corridors.
               </p>
-              <p className="text-ink-muted leading-relaxed">
-                Every journey is managed end-to-end â€” from flight and hotel
+              <p className="text-white/60 leading-relaxed">
+                Every journey is managed end-to-end — from flight and hotel
                 coordination to visa documentation, protocol support for government
                 delegations, and culturally tailored itineraries for leadership
                 retreats and site visits.
               </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="flex flex-col sm:flex-row gap-4"
-            >
-              <Link href="/contact" className="btn-primary group">
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-medium text-sm tracking-wide transition-all duration-300 hover:scale-105 group" style={{ background: "#F59E0B", color: "#1E1B4B" }}>
                 Explore Meridian Journeys
                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </Link>
-            </motion.div>
+            </div>
           </div>
 
           {/* Portfolio grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {TRAVEL_PORTFOLIO.map((item, i) => {
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {TRAVEL_PORTFOLIO.map((item) => {
               const Icon = item.icon;
               return (
                 <motion.div
                   key={item.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.07, ease: [0.16, 1, 0.3, 1] }}
-                  className="rounded-2xl p-6 bg-white border border-light-gray"
+                  whileHover={{ y: -4, borderColor: "rgba(255,255,255,0.25)" }}
+                  style={{ opacity: 1 }}
+                  className="rounded-2xl p-6 bg-white/5 border border-white/10 backdrop-blur-sm"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-primary-brand/10 border border-primary-brand/20 flex items-center justify-center mb-4">
-                    <Icon className="w-4 h-4 text-accent-purple" />
+                  <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center mb-4">
+                    <Icon className="w-4 h-4" style={{ color: "#FBBF24" }} />
                   </div>
-                  <h3 className="font-display text-sm font-semibold text-navy mb-2">{item.title}</h3>
-                  <p className="text-xs text-ink-muted leading-relaxed">{item.description}</p>
+                  <h3 className="font-display text-sm font-semibold text-white mb-2">{item.title}</h3>
+                  <p className="text-xs text-white/60 leading-relaxed">{item.description}</p>
                 </motion.div>
               );
             })}
