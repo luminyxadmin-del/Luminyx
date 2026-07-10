@@ -11,7 +11,6 @@ import {
   MapPin,
   Handshake,
   LineChart,
-  CheckCircle2,
 } from "lucide-react";
 
 const CAPABILITIES = [
@@ -56,46 +55,27 @@ const CAPABILITIES = [
 const HOW_STEPS = [
   {
     number: "01",
-    title: "Diagnostic",
+    title: "Growth Diagnostic",
     description:
-      "We map the current state of your programme portfolio against market demand, employer expectations, and graduate outcome data.",
+      "We look at where your institution stands today: enrollment numbers, conversion rates, market positioning, competitive landscape, and revenue structure. No assumptions, no predetermined solutions. Just an honest read of what's working and what isn't.",
   },
   {
     number: "02",
-    title: "Co-design",
+    title: "Strategy Build",
     description:
-      "Luminyx facilitators work with faculty, industry councils, and employer partners to rebuild curriculum from evidence-based first principles.",
+      "Based on the diagnostic, we build a growth plan specific to your institution. That could mean entering a new geography, restructuring your sales function, launching online programmes, or fixing collections. We scope what's realistic, not what looks impressive on a slide.",
   },
   {
     number: "03",
-    title: "Pilot",
+    title: "Deploy",
     description:
-      "A selected cohort runs the redesigned programme with real-time feedback loops, employer mentoring, and weekly outcome tracking.",
+      "We don't hand you a strategy document and leave. We help build the teams, processes, and systems to execute it. Sales infrastructure, CRM setup, KPI frameworks, training, incentive models — whatever the plan calls for.",
   },
   {
     number: "04",
     title: "Scale",
     description:
-      "Successful pilots are systematically deployed across the institution with staff training, quality assurance, and monitoring infrastructure.",
-  },
-];
-
-const PARTNERS = [
-  {
-    name: "Ashoka Business Consortium",
-    tag: "Strategy & Management programmes",
-  },
-  {
-    name: "East African Skills Authority",
-    tag: "Technical & vocational frameworks",
-  },
-  {
-    name: "Southern Universities Network",
-    tag: "Research & postgraduate alignment",
-  },
-  {
-    name: "GCC Employment Council",
-    tag: "Industry connector for Gulf-market placements",
+      "Once the model works in one market or one programme, we help you replicate it. Our founding team scaled one institution from ZAR 100M to ZAR 1.5B across nine countries. We know what breaks when you grow fast, and how to prevent it.",
   },
 ];
 
@@ -332,51 +312,47 @@ export default function EducationPage() {
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            <div className="lg:col-span-7 space-y-4">
-              {HOW_STEPS.map((step) => (
-                <motion.div
-                  key={step.number}
-                  whileHover={{ x: 4 }}
-                  style={{ opacity: 1 }}
-                  className="flex gap-5 p-6 rounded-2xl bg-white border border-light-gray"
-                >
-                  <div className="flex items-center justify-center w-9 h-9 rounded-full shrink-0 font-mono text-xs font-bold" style={{ background: "#F5F3FF", color: "#6D28D9" }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {HOW_STEPS.map((step, i) => (
+              <motion.div
+                key={step.number}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
+                whileHover={{ y: -6 }}
+                className="group relative rounded-[26px] bg-white shadow-card-soft hover:shadow-elevated transition-shadow duration-300"
+              >
+                {/* Static border — visible at rest */}
+                <div className="absolute inset-0 rounded-[26px] border border-light-gray group-hover:opacity-0 transition-opacity duration-500 pointer-events-none" />
+
+                {/* Animated gradient border — fades in on hover */}
+                <div className="animated-gradient-border absolute inset-0 rounded-[26px] p-[1.5px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                  <div className="w-full h-full rounded-[24.5px] bg-white" />
+                </div>
+
+                <div className="relative flex gap-5 p-7 rounded-[26px] overflow-hidden h-full">
+                  {/* Ambient glow on hover */}
+                  <div className="absolute -top-20 -left-20 w-48 h-48 rounded-full bg-primary-brand/0 group-hover:bg-primary-brand/10 blur-3xl transition-all duration-500 pointer-events-none" />
+
+                  <div
+                    className="relative flex items-center justify-center w-11 h-11 rounded-2xl shrink-0 font-mono text-sm font-bold shadow-sm"
+                    style={{ background: "linear-gradient(135deg, #6D28D9, #A78BFA)", color: "#FFFFFF" }}
+                  >
                     {step.number}
                   </div>
-                  <div>
+                  <div className="relative">
                     <h3 className="font-display text-base font-semibold mb-1.5" style={{ color: "#111827" }}>
                       {step.title}
                     </h3>
                     <p className="text-sm leading-relaxed" style={{ color: "#4B5563" }}>{step.description}</p>
                   </div>
-                </motion.div>
-              ))}
-            </div>
 
-            <div className="lg:col-span-5">
-              <h3 className="font-display text-xl font-bold mb-6" style={{ color: "#111827" }}>
-                Institutional Partners
-              </h3>
-              <div className="space-y-3">
-                {PARTNERS.map((p) => (
-                  <motion.div
-                    key={p.name}
-                    whileHover={{ x: 4 }}
-                    style={{ opacity: 1 }}
-                    className="flex items-center gap-4 p-5 rounded-2xl bg-white border border-light-gray"
-                  >
-                    <div className="flex items-center justify-center w-10 h-10 rounded-full shrink-0" style={{ background: "#F5F3FF" }}>
-                      <CheckCircle2 className="w-4 h-4" style={{ color: "#6D28D9" }} />
-                    </div>
-                    <div>
-                      <div className="font-display text-sm font-semibold" style={{ color: "#111827" }}>{p.name}</div>
-                      <div className="text-xs mt-0.5 italic" style={{ color: "#6B7280" }}>{p.tag}</div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
+                  {/* Bottom accent line */}
+                  <div className="absolute bottom-0 left-7 right-7 h-px bg-gradient-to-r from-transparent via-accent-purple/0 to-transparent group-hover:via-accent-purple/60 transition-all duration-500" />
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
