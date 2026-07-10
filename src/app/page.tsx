@@ -59,10 +59,11 @@ const CORRIDORS = [
 
 const PARTNERS: { name: string; logo: string; bg: string; imgClass?: string; zoom?: number; url?: string }[] = [
   {
-    name: "Partner",
+    name: "Tech Byte Bridges",
     logo: "https://res.cloudinary.com/dtg3lepr4/image/upload/v1783487223/PHOTO-2026-07-06-12-05-23_rqfmcz.jpg",
     bg: "#ffffff",
     zoom: 1.6,
+    url: "https://www.techbytebridges.com/",
   },
   {
     name: "Emilestones",
@@ -332,7 +333,6 @@ export default function HomePage() {
                   label: "Talent",
                   rows: [
                     { problem: "Siloed vendors with no cross-division visibility", solution: "Unified intelligence across all talent management layers" },
-                    { problem: "Ad-hoc talent placements without market intelligence", solution: "Precision-matched talent informed by real-time data" },
                   ],
                 },
                 {
@@ -340,7 +340,6 @@ export default function HomePage() {
                   label: "Education",
                   rows: [
                     { problem: "Fragmented education-to-employment pathways", solution: "End-to-end institutional mapping with live outcome tracking" },
-                    { problem: "Lack of alignment with industry needs and outcomes", solution: "Industry-aligned curricula with measurable impact" },
                   ],
                 },
                 {
@@ -348,7 +347,20 @@ export default function HomePage() {
                   label: "Travel",
                   rows: [
                     { problem: "Disconnected mobility providers and service layers", solution: "Unified mobility ecosystem across regions" },
-                    { problem: "Inconsistent traveler and logistics experience", solution: "Seamless and consistent end-to-end experiences" },
+                  ],
+                },
+                {
+                  icon: BrainCircuit,
+                  label: "AI Advisory",
+                  rows: [
+                    { problem: "Fragmented policy advice with no data backing", solution: "Evidence-based strategy informed by real-time intelligence" },
+                  ],
+                },
+                {
+                  icon: Cpu,
+                  label: "Technology",
+                  rows: [
+                    { problem: "Disconnected data systems with no cross-division visibility", solution: "Unified AI platform aggregating intelligence across all five divisions" },
                   ],
                 },
               ].map((group, gi) => (
