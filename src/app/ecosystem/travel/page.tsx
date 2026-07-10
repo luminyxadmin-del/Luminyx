@@ -153,7 +153,7 @@ export default function TravelPage() {
                 <span className="text-accent-purple">Intelligently</span>
               </h1>
               <p className="mt-5 text-white/60 text-lg leading-relaxed max-w-xl">
-                We build the infrastructure that makes cross-border talent movement seamless — from opportunity identification to visa processing, relocation, and integration.
+                We build the infrastructure that makes cross-border talent movement seamless — from opportunity identification to relocation, settlement, and integration.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <a href="https://www.luminyxtravel.net/" target="_blank" rel="noopener noreferrer" className="btn-primary">
@@ -168,8 +168,8 @@ export default function TravelPage() {
             <div className="lg:col-span-5 grid grid-cols-2 gap-4">
               {[
                 { value: "40+", label: "Destination Countries" },
-                { value: "72hr", label: "Avg Visa Processing" },
-                { value: "94%", label: "Successful Placements" },
+                { value: "24/7", label: "Concierge Support" },
+                { value: "Multi-City", label: "Itinerary Planning" },
                 { value: "6", label: "Active Corridors" },
               ].map((s) => (
                 <div key={s.label} className="rounded-2xl p-5 bg-white/5 border border-white/10 backdrop-blur-sm">
