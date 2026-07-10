@@ -137,12 +137,12 @@ export default function EducationPage() {
 
         <div className="relative container-xl">
           <div className="text-xs text-white/30 mb-6">
-            Luminyx Group / <span className="text-white/50">Ecosystem</span> / <span className="text-accent-purple">Education</span>
+            Luminyx Group / <span className="text-white/50">Ecosystem</span> / <span className="text-accent-purple">Education Advisory</span>
           </div>
 
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.08] border border-white/10 mb-6">
             <GraduationCap className="w-3.5 h-3.5 text-accent-purple" />
-            <span className="text-xs font-medium text-white/70 uppercase tracking-wider">EDUCATION</span>
+            <span className="text-xs font-medium text-white/70 uppercase tracking-wider">EDUCATION ADVISORY</span>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -236,19 +236,17 @@ export default function EducationPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {OUTCOME_KPIS.map((kpi, i) => (
+            {OUTCOME_KPIS.map((kpi) => (
               <motion.div
                 key={kpi.label}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
+                whileHover={{ y: -4 }}
+                style={{ opacity: 1 }}
                 className="rounded-2xl p-6 bg-white border border-light-gray backdrop-blur-sm"
               >
-                <div className="font-display text-3xl md:text-4xl font-bold text-accent-purple mb-1">
+                <div className="font-display text-3xl md:text-4xl font-bold mb-1" style={{ color: "#6D28D9" }}>
                   {kpi.value}
                 </div>
-                <div className="text-xs uppercase tracking-widest text-ink-muted font-medium mb-2">
+                <div className="text-xs uppercase tracking-widest font-medium mb-2" style={{ color: "#4B5563" }}>
                   {kpi.label}
                 </div>
                 <div className={`text-xs font-medium flex items-center gap-1 ${kpi.trendUp ? "text-success" : "text-amber"}`}>
@@ -277,48 +275,46 @@ export default function EducationPage() {
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <div className="space-y-4">
-              {HOW_STEPS.map((step, i) => (
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <div className="lg:col-span-7 space-y-4">
+              {HOW_STEPS.map((step) => (
                 <motion.div
                   key={step.number}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                  whileHover={{ x: 4 }}
+                  style={{ opacity: 1 }}
                   className="flex gap-5 p-6 rounded-2xl bg-white border border-light-gray"
                 >
-                  <div className="text-xs font-mono text-primary-brand font-bold tracking-widest mt-0.5 w-6 shrink-0">
+                  <div className="flex items-center justify-center w-9 h-9 rounded-full shrink-0 font-mono text-xs font-bold" style={{ background: "#F5F3FF", color: "#6D28D9" }}>
                     {step.number}
                   </div>
                   <div>
-                    <h3 className="font-display text-base font-semibold text-navy mb-1.5">
+                    <h3 className="font-display text-base font-semibold mb-1.5" style={{ color: "#111827" }}>
                       {step.title}
                     </h3>
-                    <p className="text-sm text-slate leading-relaxed">{step.description}</p>
+                    <p className="text-sm leading-relaxed" style={{ color: "#4B5563" }}>{step.description}</p>
                   </div>
                 </motion.div>
               ))}
             </div>
 
-            <div>
-              <h3 className="font-display text-xl font-bold text-navy mb-6">
+            <div className="lg:col-span-5">
+              <h3 className="font-display text-xl font-bold mb-6" style={{ color: "#111827" }}>
                 Institutional Partners
               </h3>
               <div className="space-y-3">
-                {PARTNERS.map((p, i) => (
+                {PARTNERS.map((p) => (
                   <motion.div
                     key={p.name}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                    className="flex items-start gap-4 p-5 rounded-2xl bg-white border border-light-gray"
+                    whileHover={{ x: 4 }}
+                    style={{ opacity: 1 }}
+                    className="flex items-center gap-4 p-5 rounded-2xl bg-white border border-light-gray"
                   >
-                    <CheckCircle2 className="w-4 h-4 text-primary-brand/70 mt-0.5 shrink-0" />
+                    <div className="flex items-center justify-center w-10 h-10 rounded-full shrink-0" style={{ background: "#F5F3FF" }}>
+                      <CheckCircle2 className="w-4 h-4" style={{ color: "#6D28D9" }} />
+                    </div>
                     <div>
-                      <div className="font-display text-sm font-semibold text-navy">{p.name}</div>
-                      <div className="text-xs text-ink-faint mt-0.5 italic">{p.tag}</div>
+                      <div className="font-display text-sm font-semibold" style={{ color: "#111827" }}>{p.name}</div>
+                      <div className="text-xs mt-0.5 italic" style={{ color: "#6B7280" }}>{p.tag}</div>
                     </div>
                   </motion.div>
                 ))}

@@ -2,7 +2,7 @@ export const SITE = {
   name: "LUMINYX",
   tagline: "One Ecosystem. Endless Opportunities.",
   description:
-    "Luminyx is the premier enterprise ecosystem bridging education, talent, and mobility with the vibrant potential of the African continent.",
+    "Luminyx is the premier enterprise ecosystem bridging advisory, education, talent, travel, and technology with the vibrant potential of the African continent.",
   url: "https://luminyx.com",
   email: "hello@luminyx.com",
   phone: "+254 700 000 000",
@@ -27,19 +27,29 @@ export const NAV_LINKS: NavItem[] = [
     href: "/ecosystem",
     children: [
       {
+        label: "AI Advisory",
+        href: "/ecosystem/advisory",
+        description: "Strategy & institutional intelligence",
+      },
+      {
+        label: "Education Advisory",
+        href: "/ecosystem/education",
+        description: "Empowering the future",
+      },
+      {
         label: "Talent",
         href: "/ecosystem/talent",
         description: "Connecting opportunity",
       },
       {
-        label: "Mobility",
-        href: "/ecosystem/mobility",
+        label: "Travel",
+        href: "/ecosystem/travel",
         description: "Explore East Africa",
       },
       {
-        label: "Education",
-        href: "/ecosystem/education",
-        description: "Empowering the future",
+        label: "Technology",
+        href: "/ecosystem/technology",
+        description: "AI platform powering all divisions",
       },
     ],
   },
@@ -57,9 +67,11 @@ export const FOOTER_LINKS = {
     { label: "Contact", href: "/contact" },
   ],
   ecosystem: [
+    { label: "AI Advisory", href: "/ecosystem/advisory" },
+    { label: "Education Advisory", href: "/ecosystem/education" },
     { label: "Talent Network", href: "/ecosystem/talent" },
-    { label: "Mobility", href: "/ecosystem/mobility" },
-    { label: "Education", href: "/ecosystem/education" },
+    { label: "Travel", href: "/ecosystem/travel" },
+    { label: "Technology", href: "/ecosystem/technology" },
   ],
   legal: [
     { label: "Privacy Policy", href: "#" },
