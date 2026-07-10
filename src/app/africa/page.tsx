@@ -41,25 +41,25 @@ const PILLARS_STRATEGIC = [
   {
     icon: Globe2,
     title: "Digital Transformation",
-    desc: "Modernizing legacy industries through cloud-native AI solutions and seamless digital ID protocols.",
+    desc: "Helping businesses move from manual processes to technology-led operations. Whether it's building a new platform or securing an existing one, we bring the engineering and cybersecurity capability to make it happen.",
     color: "from-primary-brand to-accent-purple",
   },
   {
     icon: Plane,
     title: "Tourism",
-    desc: "Sustainable tourism platforms using AI for wildlife protection and culture-first guest experiences.",
+    desc: "East Africa has some of the most sought-after travel experiences in the world. We work with partners and trade buyers to make those experiences accessible, well-run, and built on real local knowledge.",
     color: "from-indigo-accent to-primary-brand",
   },
   {
     icon: GraduationCap,
     title: "Education",
-    desc: "Localized learning management systems for rural connectivity and AI-driven skill mapping.",
+    desc: "Institutions grow when the right strategy meets real market understanding. We work with universities and education businesses looking to expand into new geographies, backed by a team that has done exactly that.",
     color: "from-accent-purple to-info",
   },
   {
     icon: Server,
-    title: "Deep Tech R&D",
-    desc: "Developing African LLMs and localized data centers across 12 strategic nodes.",
+    title: "Deep Tech Delivery",
+    desc: "We don't build technology for its own sake. Our partners deliver AI, cybersecurity, and platform solutions for organisations that need them deployed, not researched.",
     color: "from-primary-dark to-primary-brand",
   },
 ];
@@ -206,13 +206,13 @@ export default function AfricaPage() {
                   },
                   {
                     n: "02",
-                    title: "Policy Harmonization",
-                    desc: "Working with EAC governments to create a unified data protection and AI governance framework.",
+                    title: "Market Entry Support",
+                    desc: "Our founding team has operated across nine African markets. We help institutions navigate the regulatory, cultural, and operational realities of entering East Africa; based on years of doing it ourselves, not desk research.",
                   },
                   {
                     n: "03",
-                    title: "Talent Incubation",
-                    desc: "Our 'Future Builders' program has already certified 15,000 developers in AI and blockchain technologies.",
+                    title: "Talent Pipeline",
+                    desc: "Luminyx connects organisations to sector-specific talent across India and East Africa through Emilestones, with AI upskilling available through Regenesys School of AI for teams that need capability building alongside hiring.",
                   },
                 ].map((p) => (
                   <div key={p.n} className="flex gap-5">

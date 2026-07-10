@@ -4,25 +4,15 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   ArrowUpRight,
-  ShieldCheck,
-  MapPin,
-  FileText,
-  Package,
-  HeartPulse,
-  RotateCcw,
   Shield,
   Briefcase,
   Users,
-  Laptop,
-  TrendingUp,
-  GraduationCap,
   Plane,
   Calendar,
   Globe,
   Building,
-  Star,
+  HeartPulse,
 } from "lucide-react";
-import { CapabilityCard } from "@/components/CapabilityCard";
 import { StatusBadge } from "@/components/StatusBadge";
 
 const STATS = [
@@ -34,40 +24,40 @@ const STATS = [
 
 const INFRASTRUCTURE = [
   {
-    icon: ShieldCheck,
-    title: "Visa Intelligence",
+    icon: Calendar,
+    title: "Itinerary Design",
     description:
-      "AI-assisted visa pathway analysis covering work permits, business visas, and long-term residency across all 14 active corridors.",
+      "Every itinerary is built from the ground up by people who know the terrain, the camps, and the seasons. Thirty templates and twelve Signature Collection experiences across Kenya, Tanzania, and Uganda.",
   },
   {
-    icon: MapPin,
-    title: "Relocation Logistics",
+    icon: Shield,
+    title: "Conservancy Access",
     description:
-      "End-to-end relocation coordination including housing, schooling, banking, and settlement support for professionals and their dependants.",
+      "We work directly with conservancies, not through third-party aggregators. That means access to private land, lower tourist density, and experiences that generic DMCs simply cannot offer.",
   },
   {
-    icon: FileText,
-    title: "Immigration Compliance",
+    icon: Briefcase,
+    title: "Ground Operations",
     description:
-      "Continuous monitoring of immigration policy changes across 14 jurisdictions, with automated compliance alerts for all active cases.",
+      "Our Kenya-based team manages logistics end to end. Transfers, accommodation coordination, park fees, permits, and on-ground support throughout the trip.",
   },
   {
-    icon: Package,
-    title: "Document Orchestration",
+    icon: Building,
+    title: "B2B Trade Partnerships",
     description:
-      "Digital document collection, verification, and submission workflows with 24-hour processing SLAs for standard applications.",
+      "We work with travel agents, tour operators, and trade buyers who need a reliable East Africa DMC behind them. White-label ready, with pricing structured for trade margins.",
   },
   {
-    icon: HeartPulse,
-    title: "Benefits Coordination",
+    icon: Globe,
+    title: "Multi-Country Programming",
     description:
-      "Advisory on healthcare, pension portability, and compensation structuring for cross-border employment packages.",
+      "Kenya, Tanzania, and Uganda under one operator. Cross-border itineraries that move between countries without switching DMCs or losing continuity on the ground.",
   },
   {
-    icon: RotateCcw,
-    title: "Re-entry Planning",
+    icon: Users,
+    title: "Group & Corporate Travel",
     description:
-      "Structured support for professionals returning to home markets, including tax advisory and career transition services.",
+      "Tailored programmes for corporate retreats, incentive travel, and large groups. Custom-built around your schedule, group size, and objectives rather than pulled from a catalogue.",
   },
 ];
 
@@ -107,72 +97,33 @@ const ROUTES = [
 const COMPLIANCE_TILES = [
   {
     icon: Shield,
-    title: "Work Permits",
-    note: "Standard and specialised work authorisation across all 14 corridors",
-  },
-  {
-    icon: Briefcase,
-    title: "Business Visas",
-    note: "Short-term and long-stay business entry for executives and consultants",
-  },
-  {
-    icon: Users,
-    title: "Family Sponsorship",
-    note: "Dependent visa processing and family unit relocation coordination",
-  },
-  {
-    icon: Laptop,
-    title: "Digital Nomad Visas",
-    note: "Remote work authorisations in applicable jurisdictions",
-  },
-  {
-    icon: TrendingUp,
-    title: "Investor Pathways",
-    note: "Golden visa and investor residency programmes in GCC and Europe",
-  },
-  {
-    icon: GraduationCap,
-    title: "Education Visas",
-    note: "Student and research visa processing for institution-linked placements",
-  },
-];
-
-const TRAVEL_PORTFOLIO = [
-  {
-    icon: Plane,
-    title: "Executive Travel Management",
-    description:
-      "Business class coordination, lounge access, and itinerary optimisation for senior professionals on active engagements.",
-  },
-  {
-    icon: Globe,
-    title: "Institutional Delegation Planning",
-    description:
-      "End-to-end coordination for government and university delegations — logistics, protocol support, and documentation.",
-  },
-  {
-    icon: MapPin,
-    title: "Site Visit Programmes",
-    description:
-      "Curated visits to benchmark organisations, innovation hubs, and government agencies globally for institutional clients.",
-  },
-  {
-    icon: Star,
-    title: "Partner Retreat Coordination",
-    description:
-      "Multi-day leadership retreats with AV, hospitality, cultural programming, and full logistics managed by Meridian Journeys.",
+    title: "Park & Conservancy Permits",
+    note: "All national park fees, conservancy access permits, and reserve bookings handled before arrival. No surprises on the ground.",
   },
   {
     icon: Calendar,
-    title: "Conference & Event Travel",
-    description:
-      "Group travel management for teams attending sector summits, international forums, and bilateral engagement events.",
+    title: "Booking & Voucher Management",
+    note: "End-to-end confirmation of accommodation, transfers, and activities. Every booking documented and shared with your team ahead of departure.",
   },
   {
-    icon: Building,
-    title: "VIP Relocation Packages",
-    description:
-      "White-glove relocation service for C-suite hires, including residence search, schooling, and family settlement coordination.",
+    icon: HeartPulse,
+    title: "Health & Entry Guidance",
+    note: "We advise trade partners and travellers on vaccination requirements, travel insurance expectations, and country-specific entry documentation for Kenya, Tanzania, and Uganda. We guide, we don't process.",
+  },
+  {
+    icon: Users,
+    title: "Group Documentation",
+    note: "For corporate and large-group bookings, we manage the full manifest: rooming lists, dietary requirements, transfer schedules, and emergency contacts in one place.",
+  },
+  {
+    icon: Globe,
+    title: "Customs & Cross-Border Briefing",
+    note: "For multi-country itineraries crossing Kenya-Tanzania or Kenya-Uganda borders, we brief travellers on what to expect at each crossing, what documents to carry, and what fees apply.",
+  },
+  {
+    icon: Briefcase,
+    title: "Supplier Contracts & SLAs",
+    note: "Every lodge, camp, and transport provider we work with operates under a documented agreement. Your clients are covered by our supplier relationships, not left to hope things work out.",
   },
 ];
 
@@ -251,16 +202,52 @@ export default function TravelPage() {
               </p>
             </motion.div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {INFRASTRUCTURE.map((cap, i) => (
-              <CapabilityCard
-                key={cap.title}
-                icon={cap.icon}
-                title={cap.title}
-                description={cap.description}
-                delay={i * 0.07}
-              />
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {INFRASTRUCTURE.map((cap, i) => {
+              const Icon = cap.icon;
+              return (
+                <motion.div
+                  key={cap.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.07, ease: [0.16, 1, 0.3, 1] }}
+                  whileHover={{ y: -6 }}
+                  className="group relative rounded-[26px] bg-white shadow-card-soft hover:shadow-elevated transition-shadow duration-300"
+                >
+                  {/* Static border — visible at rest */}
+                  <div className="absolute inset-0 rounded-[26px] border border-light-gray group-hover:opacity-0 transition-opacity duration-500 pointer-events-none" />
+
+                  {/* Animated gradient border — fades in on hover */}
+                  <div className="animated-gradient-border absolute inset-0 rounded-[26px] p-[1.5px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                    <div className="w-full h-full rounded-[24.5px] bg-white" />
+                  </div>
+
+                  <div className="relative p-8 rounded-[26px] overflow-hidden">
+                    {/* Ambient glow on hover */}
+                    <div className="absolute -top-20 -left-20 w-48 h-48 rounded-full bg-primary-brand/0 group-hover:bg-primary-brand/10 blur-3xl transition-all duration-500 pointer-events-none" />
+
+                    <div className="relative">
+                      <div
+                        className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 shadow-sm"
+                        style={{ background: "linear-gradient(135deg, #6D28D9, #A78BFA)" }}
+                      >
+                        <Icon className="w-6 h-6" style={{ color: "#FFFFFF" }} />
+                      </div>
+                      <h3 className="font-display text-lg font-semibold mb-2.5" style={{ color: "#111827" }}>
+                        {cap.title}
+                      </h3>
+                      <p className="text-sm leading-relaxed" style={{ color: "#4B5563" }}>
+                        {cap.description}
+                      </p>
+                    </div>
+
+                    {/* Bottom accent line */}
+                    <div className="absolute bottom-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-accent-purple/0 to-transparent group-hover:via-accent-purple/60 transition-all duration-500" />
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -306,97 +293,56 @@ export default function TravelPage() {
           <div className="text-center mb-12">
             <div className="chip mb-4 inline-flex">Coverage</div>
             <h2 className="font-display text-4xl md:text-[44px] font-bold tracking-tight leading-[1.1] mb-4" style={{ color: "#111827" }}>
-              Compliance & Documentation Coverage
+              Travel Documentation & Support
             </h2>
             <p className="max-w-xl mx-auto text-lg leading-relaxed" style={{ color: "#4B5563" }}>
-              We handle the regulatory complexity so your professionals can focus
-              on impact, not paperwork.
+              We handle the paperwork so your clients can focus on the experience.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {COMPLIANCE_TILES.map((tile) => {
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {COMPLIANCE_TILES.map((tile, i) => {
               const Icon = tile.icon;
               return (
                 <motion.div
                   key={tile.title}
-                  whileHover={{ y: -4 }}
-                  style={{ opacity: 1, height: "100%" }}
-                  className="flex items-start gap-4 p-6 rounded-2xl bg-white border border-light-gray"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.07, ease: [0.16, 1, 0.3, 1] }}
+                  whileHover={{ y: -6 }}
+                  className="group relative rounded-[26px] bg-white shadow-card-soft hover:shadow-elevated transition-shadow duration-300"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-primary-brand/10 border border-primary-brand/20 flex items-center justify-center shrink-0">
-                    <Icon className="w-4 h-4 text-accent-purple" />
-                  </div>
-                  <div>
-                    <h3 className="font-display text-sm font-semibold mb-1.5" style={{ color: "#111827" }}>{tile.title}</h3>
-                    <p className="text-xs leading-relaxed" style={{ color: "#4B5563" }}>{tile.note}</p>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+                  {/* Static border — visible at rest */}
+                  <div className="absolute inset-0 rounded-[26px] border border-light-gray group-hover:opacity-0 transition-opacity duration-500 pointer-events-none" />
 
-      {/* ─── MERIDIAN JOURNEYS ────────────────────────────────────────────────── */}
-      <section className="py-section-lg relative overflow-hidden bg-primary-dark">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-dark via-primary-dark to-primary-brand/20 pointer-events-none" />
-        <div className="absolute top-0 right-0 w-96 h-96 bg-accent-purple/10 blur-[100px] rounded-full pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-amber/10 blur-[80px] rounded-full pointer-events-none" />
-        <div className="container-xl relative">
-          {/* Brand header */}
-          <div className="text-center mb-14">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber/10 border border-amber/30 text-amber text-xs font-bold tracking-widest uppercase mb-5">
-              Travel Sub-Brand
-            </div>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-white tracking-tight leading-[1.1] mb-4">
-              Meridian Journeys
-            </h2>
-            <p className="text-white/60 max-w-xl mx-auto text-lg italic">
-              Premium travel management for Luminyx professionals and their
-              institutions.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-14">
-            <div>
-              <p className="text-white/80 text-lg leading-relaxed mb-4">
-                Meridian Journeys is the travel management arm of Luminyx Travel,
-                providing white-glove corporate travel, institutional delegation
-                logistics, and executive relocation packages for clients across our
-                14 active corridors.
-              </p>
-              <p className="text-white/60 leading-relaxed">
-                Every journey is managed end-to-end — from flight and hotel
-                coordination to visa documentation, protocol support for government
-                delegations, and culturally tailored itineraries for leadership
-                retreats and site visits.
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href="https://www.luminyxtravel.net/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-medium text-sm tracking-wide transition-all duration-300 hover:scale-105 group" style={{ background: "#F59E0B", color: "#1E1B4B" }}>
-                Explore Meridian Journeys
-                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </a>
-            </div>
-          </div>
-
-          {/* Portfolio grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {TRAVEL_PORTFOLIO.map((item) => {
-              const Icon = item.icon;
-              return (
-                <motion.div
-                  key={item.title}
-                  whileHover={{ y: -4, borderColor: "rgba(255,255,255,0.25)" }}
-                  style={{ opacity: 1 }}
-                  className="rounded-2xl p-6 bg-white/5 border border-white/10 backdrop-blur-sm"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center mb-4">
-                    <Icon className="w-4 h-4" style={{ color: "#FBBF24" }} />
+                  {/* Animated gradient border — fades in on hover */}
+                  <div className="animated-gradient-border absolute inset-0 rounded-[26px] p-[1.5px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                    <div className="w-full h-full rounded-[24.5px] bg-white" />
                   </div>
-                  <h3 className="font-display text-sm font-semibold text-white mb-2">{item.title}</h3>
-                  <p className="text-xs text-white/60 leading-relaxed">{item.description}</p>
+
+                  <div className="relative p-7 rounded-[26px] overflow-hidden h-full">
+                    {/* Ambient glow on hover */}
+                    <div className="absolute -top-20 -left-20 w-48 h-48 rounded-full bg-primary-brand/0 group-hover:bg-primary-brand/10 blur-3xl transition-all duration-500 pointer-events-none" />
+
+                    <div className="relative">
+                      <div
+                        className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 shadow-sm"
+                        style={{ background: "linear-gradient(135deg, #6D28D9, #A78BFA)" }}
+                      >
+                        <Icon className="w-5 h-5" style={{ color: "#FFFFFF" }} />
+                      </div>
+                      <h3 className="font-display text-base font-semibold mb-2" style={{ color: "#111827" }}>
+                        {tile.title}
+                      </h3>
+                      <p className="text-sm leading-relaxed" style={{ color: "#4B5563" }}>
+                        {tile.note}
+                      </p>
+                    </div>
+
+                    {/* Bottom accent line */}
+                    <div className="absolute bottom-0 left-7 right-7 h-px bg-gradient-to-r from-transparent via-accent-purple/0 to-transparent group-hover:via-accent-purple/60 transition-all duration-500" />
+                  </div>
                 </motion.div>
               );
             })}

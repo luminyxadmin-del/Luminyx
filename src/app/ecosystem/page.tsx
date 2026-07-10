@@ -22,7 +22,6 @@ const VERTICALS = [
     subtitle: "Strategy & Institutional Intelligence",
     desc: "Advising governments, development finance institutions, and enterprises on workforce strategy and AI-led transformation.",
     accent: "bg-gradient-to-br from-primary-brand to-accent-purple",
-    stat: { value: "18", label: "Govt Engagements" },
   },
   {
     href: "/ecosystem/education",
@@ -48,7 +47,7 @@ const VERTICALS = [
     title: "Travel",
     subtitle: "Explore East Africa",
     desc: "Premium travel and mobility solutions curated for those who demand excellence and luxury experience.",
-    accent: "bg-gradient-to-br from-amber-500 to-orange-500",
+    accent: "bg-gradient-to-br from-amber to-orange-500",
     stat: { value: "24/7", label: "Concierge" },
   },
   {
@@ -131,14 +130,16 @@ export default function EcosystemPage() {
                         </div>
                       </div>
 
-                      <div className="md:text-right">
-                        <div className="font-display text-5xl md:text-6xl font-bold gradient-text">
-                          {v.stat.value}
+                      {v.stat && (
+                        <div className="md:text-right">
+                          <div className="font-display text-5xl md:text-6xl font-bold gradient-text">
+                            {v.stat.value}
+                          </div>
+                          <div className="text-xs uppercase tracking-widest text-slate mt-1">
+                            {v.stat.label}
+                          </div>
                         </div>
-                        <div className="text-xs uppercase tracking-widest text-slate mt-1">
-                          {v.stat.label}
-                        </div>
-                      </div>
+                      )}
                     </div>
 
                     <div

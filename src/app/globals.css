@@ -212,6 +212,18 @@
   to { width: 100%; }
 }
 
+/* Animated flowing gradient border — used on premium hover cards */
+.animated-gradient-border {
+  background: linear-gradient(90deg, #6D28D9, #A78BFA, #6D28D9, #2E1065, #6D28D9);
+  background-size: 300% 100%;
+  animation: borderFlow 5s linear infinite;
+}
+
+@keyframes borderFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
 /* Five verticals marquee — homepage */
 @keyframes marqueeScroll {
   from { transform: translateX(0); }
