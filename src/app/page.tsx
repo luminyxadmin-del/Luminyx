@@ -20,7 +20,6 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { WhyChooseSection } from "@/components/WhyChooseSection";
-import { StatusBadge } from "@/components/StatusBadge";
 import { EngagementTimeline } from "@/components/EngagementTimeline";
 import { DivisionsShowcase } from "@/components/DivisionsShowcase";
 
@@ -37,24 +36,6 @@ const MARQUEE_ITEMS = [
   { dot: "#34D399", label: "Talent", meta: "3M+ profiles · 28 countries" },
   { dot: "#F59E0B", label: "Travel", meta: "UAE · GCC · Africa corridors" },
   { dot: "#F472B6", label: "Technology", meta: "AI platform powering all divisions" },
-];
-
-const CORRIDORS = [
-  {
-    name: "Africa",
-    status: "Active" as const,
-    note: "54 markets · 1.4B+ population by 2030",
-  },
-  {
-    name: "India",
-    status: "Active" as const,
-    note: "400,000+ profiles · 20+ years placement data",
-  },
-  {
-    name: "GCC / Middle East",
-    status: "Active" as const,
-    note: "Workforce transformation · Rapid growth corridor",
-  },
 ];
 
 const PARTNERS: { name: string; logo: string; bg: string; imgClass?: string; zoom?: number; url?: string }[] = [
@@ -112,7 +93,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-transparent" />
 
         <div className="relative container-xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="max-w-2xl">
             {/* Left */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -155,66 +136,6 @@ export default function HomePage() {
                     <div className="text-xs uppercase tracking-wider text-white/55 mt-1">{s.label}</div>
                   </motion.div>
                 ))}
-              </div>
-            </motion.div>
-
-            {/* Right — Live Corridors Panel */}
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.9, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="relative"
-            >
-              {/* Subtle world-map image — sits behind the glass panel at low opacity */}
-              <div className="absolute inset-0 rounded-2xl overflow-hidden -z-10">
-                <Image
-                  src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&auto=format&fit=crop&q=80"
-                  alt="Global intelligence network"
-                  fill
-                  priority
-                  className="object-cover opacity-55"
-                />
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-brand/5 via-transparent to-accent-purple/10" />
-              </div>
-
-              <div className="relative rounded-2xl bg-white border border-light-gray shadow-card-soft p-6">
-                <div className="absolute -top-20 -right-20 w-60 h-60 bg-primary-brand/10 blur-3xl rounded-full pointer-events-none" />
-
-                <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-primary-brand font-bold mb-5">
-                  Live Corridors
-                </div>
-
-                <div className="space-y-3">
-                  {CORRIDORS.map((c, i) => (
-                    <motion.div
-                      key={c.name}
-                      initial={{ opacity: 0, x: 16 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.5, delay: 0.5 + i * 0.1 }}
-                      className="flex items-center justify-between p-4 rounded-xl bg-bg-subtle border border-light-gray hover:border-primary-brand/30 transition-colors"
-                    >
-                      <div>
-                        <div className="font-display text-sm font-semibold text-navy">{c.name}</div>
-                        <div className="text-xs text-ink-faint mt-0.5">{c.note}</div>
-                      </div>
-                      <StatusBadge status={c.status} />
-                    </motion.div>
-                  ))}
-                </div>
-
-                <div className="mt-6 pt-5 border-t border-light-gray">
-                  <div className="text-xs text-ink-faint mb-3 uppercase tracking-widest">Live intelligence</div>
-                  <div className="flex flex-wrap gap-2">
-                    {["AI Advisory", "Education Advisory", "Talent", "Travel", "Technology"].map((d) => (
-                      <span
-                        key={d}
-                        className="px-3 py-1 rounded-full text-xs font-medium bg-primary-brand/10 text-accent-purple border border-primary-brand/20"
-                      >
-                        {d}
-                      </span>
-                    ))}
-                  </div>
-                </div>
               </div>
             </motion.div>
           </div>
@@ -320,7 +241,7 @@ export default function HomePage() {
             <div className="lg:col-span-8">
 
               {/* Column headers */}
-              <div className="grid grid-cols-[1fr_auto_1fr] mb-4 ml-16">
+              <div className="grid grid-cols-[1fr_auto_1fr] mb-4 ml-28">
                 <span className="text-xs font-bold uppercase tracking-widest text-red-500">WITHOUT LUMINYX</span>
                 <span className="w-24" />
                 <span className="text-xs font-bold uppercase tracking-widest text-emerald-600">WITH LUMINYX</span>
@@ -367,14 +288,14 @@ export default function HomePage() {
                 <div key={group.label} className={`flex gap-3 items-start ${gi > 0 ? 'mt-6' : ''}`}>
 
                   {/* Division icon + label — left column */}
-                  <div className="flex flex-col items-center gap-2 w-14 shrink-0 pt-2">
+                  <div className="flex flex-col items-center gap-2 w-24 shrink-0 pt-2">
                     <div
                       className="w-12 h-12 rounded-full flex items-center justify-center"
                       style={{ background: "#F5F3FF", border: "1px solid #DDD6FE" }}
                     >
                       <group.icon className="w-5 h-5" style={{ color: "#6D28D9" }} />
                     </div>
-                    <span style={{ color: "#6D28D9", fontWeight: 600, fontSize: "12px" }}>{group.label}</span>
+                    <span className="text-center whitespace-nowrap" style={{ color: "#6D28D9", fontWeight: 600, fontSize: "12px" }}>{group.label}</span>
                   </div>
 
                   {/* Comparison rows */}

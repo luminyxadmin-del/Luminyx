@@ -76,13 +76,13 @@ const DIVISIONS: Division[] = [
     number: "04",
     icon: Plane,
     name: "Travel",
-    tagline: "UAE · GCC · Africa corridors",
+    tagline: "Kenya · Tanzania · Uganda",
     description:
-      "From visa processing and credential verification to relocation support and employer facilitation — Luminyx Travel makes international talent movement predictable, compliant, and fast.",
+      "Curated East Africa experiences built on real ground knowledge, not assembled from a brochure. Conservancy-led itineraries, private reserve access, and end-to-end trip management across three countries.",
     capabilities: [
-      "Visa & compliance management",
-      "Credential verification",
-      "Relocation & integration support",
+      "Conservancy and private reserve access",
+      "B2B trade and corporate travel programmes",
+      "Multi-country itinerary design",
     ],
     stat: { value: "40+", label: "Destination countries" },
     href: "/ecosystem/travel",
