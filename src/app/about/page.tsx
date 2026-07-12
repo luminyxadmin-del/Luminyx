@@ -41,7 +41,7 @@ export default function AboutPage() {
             </div>
             <div className="lg:col-span-5 grid grid-cols-2 gap-4">
               {[
-                { value: "2019", label: "Founded" },
+                { value: "2026", label: "Founded" },
                 { value: "14", label: "Countries" },
                 { value: "5", label: "Divisions" },
                 { value: "Dubai", label: "Headquarters" },

@@ -404,9 +404,8 @@ export function DivisionsShowcase() {
               layout impact.
             */}
             <div
-              className="relative rounded-3xl overflow-hidden"
+              className="relative rounded-3xl overflow-hidden lg:min-h-[420px]"
               style={{
-                minHeight: "420px",
                 background: "#FFFFFF",
                 boxShadow: "0 20px 60px -12px rgba(109,40,217,0.18)",
                 border: "1px solid rgba(109,40,217,0.10)",
@@ -425,7 +424,7 @@ export function DivisionsShowcase() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                  className="absolute inset-0 p-8 md:p-10"
+                  className="relative lg:absolute lg:inset-0 p-8 md:p-10"
                 >
                   <DetailPanel division={DIVISIONS[activeIndex]} />
                 </motion.div>
