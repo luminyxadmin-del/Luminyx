@@ -254,7 +254,7 @@ export default function HomePage() {
             <div className="lg:col-span-8">
 
               {/* Column headers */}
-              <div className="grid grid-cols-[1fr_auto_1fr] mb-4 ml-28">
+              <div className="hidden sm:grid grid-cols-[1fr_auto_1fr] mb-4 sm:ml-28">
                 <span className="text-xs font-bold uppercase tracking-widest text-red-500">WITHOUT LUMINYX</span>
                 <span className="w-24" />
                 <span className="text-xs font-bold uppercase tracking-widest text-emerald-600">WITH LUMINYX</span>
@@ -298,12 +298,12 @@ export default function HomePage() {
                   ],
                 },
               ].map((group, gi) => (
-                <div key={group.label} className={`flex gap-3 items-start ${gi > 0 ? 'mt-6' : ''}`}>
+                <div key={group.label} className={`flex flex-col sm:flex-row gap-3 items-center sm:items-start ${gi > 0 ? 'mt-6' : ''}`}>
 
                   {/* Division icon + label — left column */}
-                  <div className="flex flex-col items-center gap-2 w-24 shrink-0 pt-2">
+                  <div className="flex flex-row sm:flex-col items-center gap-2 sm:w-24 w-full shrink-0 sm:pt-2">
                     <div
-                      className="w-12 h-12 rounded-full flex items-center justify-center"
+                      className="w-12 h-12 rounded-full flex items-center justify-center shrink-0"
                       style={{ background: "#F5F3FF", border: "1px solid #DDD6FE" }}
                     >
                       <group.icon className="w-5 h-5" style={{ color: "#6D28D9" }} />
@@ -312,20 +312,14 @@ export default function HomePage() {
                   </div>
 
                   {/* Comparison rows */}
-                  <div className="flex-1">
+                  <div className="flex-1 w-full min-w-0">
                     {group.rows.map((row, ri) => (
                       <div
                         key={ri}
-                        style={{
-                          display: "grid",
-                          gridTemplateColumns: "1fr auto 1fr",
-                          alignItems: "center",
-                          gap: "8px",
-                          marginBottom: "8px",
-                        }}
+                        className="grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr] items-center gap-2 mb-2"
                       >
                         {/* Problem card */}
-                        <div style={{
+                        <div className="min-w-0" style={{
                           border: "2px solid #f87171",
                           borderRadius: "14px",
                           background: "#ffffff",
@@ -350,30 +344,29 @@ export default function HomePage() {
                         </div>
 
                         {/* Animated cascading arrows */}
-                        <div style={{ display: "flex", alignItems: "center", gap: "3px", padding: "0 8px" }}>
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-0 sm:gap-[3px] py-0.5 sm:py-0 sm:px-2">
                           {[
                             { opacity: 0.15, anim: "arrowPulse1" },
                             { opacity: 0.35, anim: "arrowPulse2" },
                             { opacity: 0.60, anim: "arrowPulse3" },
                             { opacity: 0.85, anim: "arrowPulse4" },
                           ].map((arrow, i) => (
-                            <ChevronRight
-                              key={i}
-                              style={{
-                                width: "18px",
-                                height: "18px",
-                                color: "#6D28D9",
-                                opacity: arrow.opacity,
-                                animation: `${arrow.anim} 1.5s ease-in-out ${i * 0.15}s infinite`,
-                                flexShrink: 0,
-                              }}
-                              strokeWidth={2.5}
-                            />
+                            <span key={i} className="inline-flex shrink-0 rotate-90 sm:rotate-0 -my-0.5 sm:my-0">
+                              <ChevronRight
+                                className="w-3 h-3 sm:w-[18px] sm:h-[18px]"
+                                style={{
+                                  color: "#6D28D9",
+                                  opacity: arrow.opacity,
+                                  animation: `${arrow.anim} 1.5s ease-in-out ${i * 0.15}s infinite`,
+                                }}
+                                strokeWidth={2.5}
+                              />
+                            </span>
                           ))}
                         </div>
 
                         {/* Solution card */}
-                        <div style={{
+                        <div className="min-w-0" style={{
                           border: "2px solid #34d399",
                           borderRadius: "14px",
                           background: "#ffffff",

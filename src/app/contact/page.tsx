@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import {
   Mail,
-  Phone,
-  MessageCircle,
   Download,
   Paperclip,
   ChevronDown,
@@ -72,9 +70,7 @@ export default function ContactPage() {
               <h3 className="font-display text-base font-bold text-ink mb-4">Direct Channels</h3>
               <div className="space-y-3">
                 {[
-                  { icon: Mail, label: "EMAIL", value: "hello@luminyx.io", href: "mailto:hello@luminyx.io" },
-                  { icon: MessageCircle, label: "WHATSAPP", value: "+971 4 000 0000", href: "#" },
-                  { icon: Phone, label: "PHONE", value: "+971 4 000 0000", href: "tel:+97140000000" },
+                  { icon: Mail, label: "EMAIL", value: "partnership@luminyx.net", href: "mailto:partnership@luminyx.net" },
                 ].map((c) => (
                   <a key={c.label} href={c.href}
                     className="flex items-center gap-3 p-3 rounded-xl border border-gray-100 hover:border-primary-brand/20 hover:bg-primary-light/30 transition-colors">
@@ -112,8 +108,8 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <div className="text-xs text-ink-muted uppercase tracking-wider mb-1">Headquarters</div>
-                  <div className="font-display text-base font-bold text-ink">Dubai, UAE</div>
-                  <div className="text-sm text-ink-muted mt-1">Intelligence Infrastructure Hub<br />Operating across 14 countries</div>
+                  <div className="font-display text-base font-bold text-ink">Luminyx Ventures FZ-LLC</div>
+                  <div className="text-sm text-ink-muted mt-1">Compass Building, Al Hulaila<br />Al Hulaila Industrial Zone-FZ<br />Ras Al Khaimah, United Arab Emirates</div>
                   <div className="mt-3 flex gap-2">
                     <span className="text-xs px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100 font-medium">● Open</span>
                     <span className="text-xs px-2.5 py-1 rounded-full bg-primary-light text-primary-brand border border-primary-brand/10 font-medium">GST +4</span>

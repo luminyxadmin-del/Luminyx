@@ -114,21 +114,21 @@ export function Footer() {
               Contact
             </h5>
             <ul className="space-y-3 text-sm text-slate">
-              <li>Dubai, United Arab Emirates</li>
               <li>
-                <a
-                  href="mailto:connect@luminyx.io"
-                  className="hover:text-primary-brand transition-colors"
-                >
-                  connect@luminyx.io
-                </a>
+                Luminyx Ventures FZ-LLC
+                <br />
+                Compass Building, Al Hulaila
+                <br />
+                Al Hulaila Industrial Zone-FZ
+                <br />
+                Ras Al Khaimah, United Arab Emirates
               </li>
               <li>
                 <a
-                  href="tel:+97140000000"
+                  href="mailto:partnership@luminyx.net"
                   className="hover:text-primary-brand transition-colors"
                 >
-                  +971 4 000 0000
+                  partnership@luminyx.net
                 </a>
               </li>
             </ul>
