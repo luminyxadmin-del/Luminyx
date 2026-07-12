@@ -81,18 +81,30 @@ export default function HomePage() {
     <div className="bg-white">
       {/* ─── HERO ───────────────────────────────────────────────────────────── */}
       <section className="relative min-h-screen flex items-center overflow-hidden pt-20 pb-20">
-        {/* Full hero background image */}
-        <Image
-          src="https://res.cloudinary.com/dtg3lepr4/image/upload/v1782884268/ChatGPT_Image_Jul_1_2026_11_07_16_AM_i51bsu.png"
-          alt="Global network"
-          fill
-          priority
-          className="object-cover opacity-75"
-        />
-        {/* White overlay — heavy on left so text stays readable, lighter on right so image shows */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-transparent" />
+        <video
+          autoPlay
+          loop
+          playsInline
+          preload="auto"
+          style={{
+            position: 'absolute',
+            inset: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            zIndex: 0,
+          }}
+        >
+          <source src="/hero-video.mp4" type="video/mp4" />
+        </video>
+        <div style={{
+          position: 'absolute',
+          inset: 0,
+          background: 'linear-gradient(135deg, rgba(10,5,30,0.55) 0%, rgba(10,5,30,0.35) 50%, rgba(10,5,30,0.2) 100%)',
+          zIndex: 1,
+        }} />
 
-        <div className="relative container-xl">
+        <div className="relative container-xl" style={{ zIndex: 2 }}>
           <div className="max-w-2xl">
             {/* Left */}
             <motion.div
