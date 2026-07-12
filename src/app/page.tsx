@@ -83,6 +83,7 @@ export default function HomePage() {
       <section className="relative min-h-screen flex items-center overflow-hidden pt-20 pb-20">
         <video
           autoPlay
+          muted
           loop
           playsInline
           preload="auto"
