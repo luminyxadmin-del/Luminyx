@@ -78,7 +78,7 @@ export function Navbar() {
             priority
             quality={100}
             className="object-contain"
-            style={{ height: "36px", width: "auto", filter: "none", opacity: 1 }}
+            style={{ height: "48px", width: "auto", filter: "none", opacity: 1 }}
           />
         </Link>
 
