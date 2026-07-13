@@ -60,8 +60,8 @@ const PARTNERS: { name: string; logo: string; bg: string; imgClass?: string; zoo
   },
   {
     name: "Aurix Works",
-    logo: "https://res.cloudinary.com/dtg3lepr4/image/upload/v1783362009/aurix_works_logo_hires_msmdvy.png",
-    bg: "#ffffff",
+    logo: "https://res.cloudinary.com/dtg3lepr4/image/upload/e_trim/v1783924750/aurix_works_logo_8x_transparent_rwwutq.png",
+    bg: "#15131f",
     url: "https://www.aurix.works/",
   },
   {
@@ -124,7 +124,7 @@ export default function HomePage() {
               </h1>
 
               <p className="mt-5 text-white/75 text-lg leading-relaxed max-w-lg mb-10">
-                Luminyx Group unifies advisory, education, talent, travel, and
+                Luminyx Ventures unifies advisory, education, talent, travel, and
                 technology into a single intelligence infrastructure —
                 purpose-built for Africa, India, and the GCC corridor.
               </p>
