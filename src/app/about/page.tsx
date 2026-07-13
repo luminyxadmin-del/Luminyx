@@ -4,7 +4,7 @@ import Image from "next/image";
 import { ArrowUpRight, Globe, Users, BookOpen, Plane, Target, Heart, Zap, Shield, BrainCircuit, Cpu } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About — Luminyx Group",
+  title: "About — Luminyx Ventures",
   description: "We are an African-native intelligence infrastructure built to connect advisory, education, talent, travel, and technology across emerging markets.",
 };
 
@@ -28,7 +28,7 @@ export default function AboutPage() {
                 <span className="text-accent-purple">Africa Was Missing.</span>
               </h1>
               <p className="mt-6 text-white/60 text-lg leading-relaxed max-w-xl">
-                Luminyx Group is an intelligence infrastructure firm connecting emerging markets through advisory, education, talent, travel, and technology — headquartered in Dubai, with operations across 14 countries.
+                Luminyx Ventures is an intelligence infrastructure firm connecting emerging markets through advisory, education, talent, travel, and technology — headquartered in Dubai, with operations across 14 countries.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-primary-dark font-semibold hover:scale-105 transition-transform">
