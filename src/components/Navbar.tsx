@@ -61,6 +61,7 @@ export function Navbar() {
       <div
         className="flex items-center justify-between px-6 py-3 rounded-2xl transition-all duration-300"
         style={{
+          height: "60px",
           background: scrolled ? "rgba(255,255,255,0.92)" : "rgba(0,0,0,0.15)",
           backdropFilter: scrolled ? "blur(20px)" : "blur(12px)",
           WebkitBackdropFilter: scrolled ? "blur(20px)" : "blur(12px)",
@@ -69,16 +70,16 @@ export function Navbar() {
         }}
       >
         {/* Logo */}
-        <Link href="/" className="flex items-center group">
+        <Link href="/" className="flex items-center group shrink-0">
           <Image
-            src="https://res.cloudinary.com/dtg3lepr4/image/upload/v1783523985/Luminyx_ventures_Final_logo_03_fpyqls.png"
+            src="https://res.cloudinary.com/dtg3lepr4/image/upload/v1783954050/Luminyx_ventures_Final_dark_colour_logo_dnaccc.png"
             alt="Luminyx Ventures"
             width={628}
             height={200}
             priority
             quality={100}
             className="object-contain"
-            style={{ height: "48px", width: "auto", filter: "none", opacity: 1 }}
+            style={{ height: "120px", width: "auto", filter: "none", opacity: 1 }}
           />
         </Link>
 

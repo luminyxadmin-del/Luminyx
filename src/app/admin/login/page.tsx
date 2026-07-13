@@ -41,7 +41,7 @@ export default function AdminLogin() {
   return (
     <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#0F0A2A' }}>
       <div style={{ background: '#ffffff', borderRadius: '1.5rem', padding: '3rem', width: '100%', maxWidth: '420px' }}>
-        <img src="https://res.cloudinary.com/dtg3lepr4/image/upload/v1783523985/Luminyx_ventures_Final_logo_03_fpyqls.png" 
+        <img src="https://res.cloudinary.com/dtg3lepr4/image/upload/v1783954050/Luminyx_ventures_Final_dark_colour_logo_dnaccc.png"
           alt="Luminyx" style={{ height: '40px', marginBottom: '2rem' }} />
         
         <h1 style={{ fontSize: '24px', fontWeight: '700', color: '#111827', marginBottom: '8px' }}>
