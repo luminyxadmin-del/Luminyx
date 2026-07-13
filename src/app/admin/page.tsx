@@ -175,7 +175,7 @@ export default function AdminDashboard() {
     <>
       <div className="flex items-center gap-2.5 px-5 h-16 border-b border-light-gray shrink-0">
         <img
-          src="https://res.cloudinary.com/dtg3lepr4/image/upload/v1783523985/Luminyx_ventures_Final_logo_03_fpyqls.png"
+          src="https://res.cloudinary.com/dtg3lepr4/image/upload/v1783954050/Luminyx_ventures_Final_dark_colour_logo_dnaccc.png"
           alt="Luminyx" style={{ height: '26px' }} />
       </div>
 

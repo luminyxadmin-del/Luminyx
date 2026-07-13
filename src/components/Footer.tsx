@@ -61,7 +61,7 @@ export function Footer() {
           <div className="lg:col-span-5">
             <Link href="/" className="inline-flex items-center mb-6">
               <Image
-                src="https://res.cloudinary.com/dtg3lepr4/image/upload/v1783523985/Luminyx_ventures_Final_logo_03_fpyqls.png"
+                src="https://res.cloudinary.com/dtg3lepr4/image/upload/v1783954050/Luminyx_ventures_Final_dark_colour_logo_dnaccc.png"
                 alt="Luminyx Ventures"
                 width={628}
                 height={200}
