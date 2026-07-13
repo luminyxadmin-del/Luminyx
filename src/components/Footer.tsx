@@ -62,7 +62,7 @@ export function Footer() {
             <Link href="/" className="inline-flex items-center mb-6">
               <Image
                 src="https://res.cloudinary.com/dtg3lepr4/image/upload/v1783523985/Luminyx_ventures_Final_logo_03_fpyqls.png"
-                alt="Luminyx Group"
+                alt="Luminyx Ventures"
                 width={628}
                 height={200}
                 quality={100}
@@ -138,7 +138,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-16 pt-8 border-t border-light-gray flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-ink-faint">
-            © {new Date().getFullYear()} Luminyx Group · All rights reserved.
+            © {new Date().getFullYear()} Luminyx Ventures · All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <Link href="#" className="text-xs text-ink-faint hover:text-slate transition-colors">

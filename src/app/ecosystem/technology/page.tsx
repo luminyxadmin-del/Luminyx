@@ -97,7 +97,7 @@ export default function TechnologyPage() {
 
         <div className="relative container-xl">
           <div className="text-xs text-white/30 mb-6">
-            Luminyx Group / <span className="text-white/50">Ecosystem</span> / <span className="text-accent-purple">Technology</span>
+            Luminyx Ventures / <span className="text-white/50">Ecosystem</span> / <span className="text-accent-purple">Technology</span>
           </div>
 
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.08] border border-white/10 mb-6">
