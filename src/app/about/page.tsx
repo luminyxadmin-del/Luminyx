@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight, Globe, Users, BookOpen, Plane, Target, Heart, Zap, Shield, BrainCircuit, Cpu } from "lucide-react";
+import { LeadershipSection } from "@/components/LeadershipSection";
 
 export const metadata: Metadata = {
   title: "About — Luminyx Ventures",
@@ -154,6 +155,9 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* OUR LEADERSHIP */}
+      <LeadershipSection />
 
       {/* VALUES */}
       <section className="py-16 container-xl">
