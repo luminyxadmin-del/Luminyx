@@ -76,7 +76,8 @@ const LEADERS: Leader[] = [
   {
     name: "Mitali Dixit",
     role: "Director",
-    image: null,
+    image:
+      "https://res.cloudinary.com/dtg3lepr4/image/upload/v1784205374/wmremove-transformed_qdaelo.jpg",
     bio: [
       "For Mitali, travel is more than visiting destinations — it's about creating experiences that inspire, connect, and leave lasting memories. With more than 22 years in the travel industry, she specializes in curating bespoke journeys, building trusted global partnerships, and delivering exceptional service for travelers seeking meaningful experiences.",
       "Her expertise spans luxury travel, destination management, personalized itinerary design, and relationship management. Driven by a deep passion for exploration and an unwavering commitment to customer satisfaction, Mitali combines global destination knowledge with meticulous planning to ensure every journey is seamless from start to finish.",
